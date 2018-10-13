@@ -14,6 +14,7 @@ import { ForgottenPasswordComponent } from  './components/forgotten-password/for
 import { BddCreateComponent } from './components/bdd-create/bdd-create.component';
 
 import { BddCreateService } from './services/bdd-create.service';
+import { NewPartenairesComponent } from './components/new-partenaires/new-partenaires.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { BddCreateService } from './services/bdd-create.service';
     RegistrationComponent,
     EditProfileComponent,
     ForgottenPasswordComponent,
-    BddCreateComponent
+    BddCreateComponent,
+    NewPartenairesComponent
   ],
   imports: [
     BrowserModule,
