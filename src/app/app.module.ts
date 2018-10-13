@@ -3,12 +3,15 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/Forms';
 import { AppRoutingModule } from './app-routing.module';
 import { NgxSmartModalModule } from 'ngx-smart-modal';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { BddCreateComponent } from './components/bdd-create/bdd-create.component';
+
+import { BddCreateService } from './services/bdd-create.service';
 
 @NgModule({
   declarations: [
@@ -22,10 +25,11 @@ import { BddCreateComponent } from './components/bdd-create/bdd-create.component
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    NgxSmartModalModule.forRoot()
+    NgxSmartModalModule.forRoot(),
+    HttpClientModule
   ],
   providers: [
-
+    BddCreateService
   ],
   bootstrap: [
     AppComponent
