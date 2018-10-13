@@ -15,6 +15,7 @@ import { BddCreateComponent } from './components/bdd-create/bdd-create.component
 
 import { BddCreateService } from './services/bdd-create.service';
 import { NewPartenairesComponent } from './components/new-partenaires/new-partenaires.component';
+import { PagePartenaireComponent } from './components/page-partenaire/page-partenaire.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { NewPartenairesComponent } from './components/new-partenaires/new-parten
     EditProfileComponent,
     ForgottenPasswordComponent,
     BddCreateComponent,
-    NewPartenairesComponent
+    NewPartenairesComponent,
+    PagePartenaireComponent
   ],
   imports: [
     BrowserModule,
