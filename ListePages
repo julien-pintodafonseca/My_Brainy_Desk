@@ -13,7 +13,7 @@ X Formulaire "Création d'un compte utilisateur"
 	- Affichage des informations utilisateur
 	- Gestion de l'ajout des logos/photos
 	- Tableau de bord de gestion
-	- Calendrier de réservation
+	~ [Kevin] Calendrier de réservation
 	- Consultation des réservations en cours
 	- Consultation des reservations annulées
 	- Consultation des réservations validées
