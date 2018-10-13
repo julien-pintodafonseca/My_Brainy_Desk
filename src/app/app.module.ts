@@ -9,6 +9,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { RegistrationComponent } from './components/registration/registration.component';
+import { EditProfileComponent } from  './components/edit-Profile/edit-Profile.component';
+import { ForgottenPasswordComponent } from  './components/forgotten-password/forgotten-password.component';
 import { BddCreateComponent } from './components/bdd-create/bdd-create.component';
 
 import { BddCreateService } from './services/bdd-create.service';
@@ -19,6 +21,8 @@ import { BddCreateService } from './services/bdd-create.service';
     HomeComponent,
     PageNotFoundComponent,
     RegistrationComponent,
+    EditProfileComponent,
+    ForgottenPasswordComponent,
     BddCreateComponent
   ],
   imports: [
