@@ -1,0 +1,31 @@
+/* Bootstrap */
+@import url("/lib/bootstrap/css/bootstrap.min.css");
+
+@import url('header.css');
+@import url('footer.css');
+
+
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css?family=Maven+Pro");
+
+
+body {
+    font-family: 'Maven Pro', sans-serif;
+    margin: 0;
+    
+}
+
+.gradient-red {
+    background: rgb(0,172,255);
+    background: linear-gradient(33deg, #ff0d32 0%, #ff50e9 100%);
+    color:white !important;
+}
+
+.gradient-blue {
+    background: radial-gradient(33deg, rgba(0,172,255,1) 0%, rgba(124,0,255,1) 100%);
+}
+
+.shadowbox {
+    box-shadow: 0 0 11px rgba(0, 0, 0, .21);
+}
+

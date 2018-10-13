@@ -1,0 +1,52 @@
+header {
+    margin-bottom: 77px;
+}
+
+
+header h1 {
+    font-size: 66px;
+    letter-spacing: 2px;
+    margin-bottom: 0;
+}
+
+
+header div.title {
+    background-image: url('../media/image/header/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/*
+header .navbar {
+    background: linear-gradient(33deg, rgba(0,172,255,1) 0%, rgba(124,0,255,1) 100%);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+header .nav-item {
+    background-color: rgba(255,255,255,0.2);
+    box-shadow: 0 0 11px rgba(0, 0, 0, .21);
+    border-radius: 100px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    transition: 0.5s;
+}
+
+header .nav-item:hover {
+    box-shadow: 0 0 11px rgba(255, 255, 255, .21);
+    background-color: rgba(255,255,255,0.4); 
+    transition: 0.5s;
+}
+
+header .navbar-collapse {
+    justify-content: center;
+}
+
+header .nav-link {
+    color: white;
+}
+*/ 
