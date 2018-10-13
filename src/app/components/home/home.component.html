@@ -1,0 +1,39 @@
+<!-- Home -->
+<div id="home-component">
+  <br />
+  <h1 style="text-align:center">Accueil</h1>
+
+  <br />
+  <br />
+  <br />
+
+  <!-- Espace 1 -->
+
+    <!-- Buttons -->
+    <div>
+        <button (click)="ngxSmartModalService.getModal('modTest').open()">Test</button>
+      </div>
+    <!-- /Buttons -->
+
+  <!-- /Espace 1 -->
+
+  <!-- Modals -->
+  <span>
+
+    <!-- Modal "modTest" -->
+    <ngx-smart-modal #modTest customClass="modTest"  identifier="modTest" [closable]=true [escapable]=false [dismissable]=false >
+      <div style="height:75vh; text-align:center">
+        <h2>[Titre]</h2>
+        <br />
+        <br />   
+        <br />
+        <br />
+        <h2>[Contenu]</h2>
+      </div>
+    </ngx-smart-modal>
+
+  </span>
+  <!-- /Modals -->
+
+</div>
+<!-- /Home -->
