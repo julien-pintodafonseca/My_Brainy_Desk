@@ -101,7 +101,7 @@ body.dialog-open {
   /* /ngx-smart-modal default style */
   
   /* ngx-smart-modal custom style */
-  .modTest {
+  .modRegistration, .modEdit, .modForgottenPassword  {
       width: 60% !important;
       max-width: 100% !important;
   }

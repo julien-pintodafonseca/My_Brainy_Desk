@@ -12,7 +12,9 @@
     <!-- Buttons -->
     <div>
         <button (click)="ngxSmartModalService.getModal('modRegistration').open()">Inscription</button>
+        <button (click)="ngxSmartModalService.getModal('modEdit').open()">Edition Profil</button>
       </div>
+
     <!-- /Buttons -->
 
   <!-- /Espace 1 -->
@@ -27,7 +29,23 @@
       </div>
     </ngx-smart-modal>
 
+    <!-- Modal "modEdit" -->
+    <ngx-smart-modal #modEdit customClass="modEdit"  identifier="modEdit" [closable]=true [escapable]=false [dismissable]=false >
+      <div style="height:75vh; text-align:left">
+        <app-edit-profile></app-edit-profile>
+      </div>
+        <button (click)="modEdit.close();ngxSmartModalService.getModal('modForgottenPassword').open()">Mot de passe oublié ?</button>
+    </ngx-smart-modal>
+
+    <!-- Modal "modForgottenPassword" -->
+    <ngx-smart-modal #modForgottenPassword customClass="modForgottenPassword"  identifier="modForgottenPassword" [closable]=true [escapable]=false [dismissable]=false >
+      <div style="height:75vh; text-align:left">
+        <app-forgotten-password></app-forgotten-password>
+      </div>
+    </ngx-smart-modal>
+
   </span>
+  
   <!-- /Modals -->
 
 </div>
