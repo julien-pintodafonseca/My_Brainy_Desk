@@ -11,7 +11,7 @@
 
     <!-- Buttons -->
     <div>
-        <button (click)="ngxSmartModalService.getModal('modTest').open()">Test</button>
+        <button (click)="ngxSmartModalService.getModal('modRegistration').open()">Inscription</button>
       </div>
     <!-- /Buttons -->
 
@@ -20,15 +20,10 @@
   <!-- Modals -->
   <span>
 
-    <!-- Modal "modTest" -->
-    <ngx-smart-modal #modTest customClass="modTest"  identifier="modTest" [closable]=true [escapable]=false [dismissable]=false >
-      <div style="height:75vh; text-align:center">
-        <h2>[Titre]</h2>
-        <br />
-        <br />   
-        <br />
-        <br />
-        <h2>[Contenu]</h2>
+    <!-- Modal "modRegistration" -->
+    <ngx-smart-modal #modRegistration customClass="modRegistration"  identifier="modRegistration" [closable]=true [escapable]=false [dismissable]=false >
+      <div style="height:75vh; text-align:left">
+        <app-registration></app-registration>
       </div>
     </ngx-smart-modal>
 
