@@ -1,41 +1,50 @@
-<form method="post" id="registration">
+
 
     <h2>
       Formulaire d'inscription
     </h2>
-  
-      <br />
-      <label for= "Nom">  Nom : </label>
-      <input type ="text" name = "Nom" /> <br/>
 
-      <label for= "Prénom">  Prénom : </label>
-      <input type ="text" name = "Prénom"/> <br/>
+    <form>
+      <p>
+          Type de compte :&nbsp;
+    
+          <input type="radio" name="choix" value="Utilisateur" /><label for="Utilisateur">Utilisateur&nbsp;</label>
+         
+          <input type="radio" name="choix" value="Partenaire" /><label for="Partenaire">Partenaire&nbsp;</label>
+      </p>
 
-      <label for= "NomEntreprise">  Nom de l'entreprise : </label>
-      <input type ="text" name = "NomEntreprise"/> <br/>
+      <label for= "Nom">  Nom :&nbsp;</label>
+      <input type ="text" name = "Nom" required/> <br />
 
-      <label for= "NuméroSIRET">  Numéro de SIRET : </label>
-      <input type ="text" name = "NuméroSIRET"/> <br/>
+      <label for= "Prénom">  Prénom :&nbsp;</label>
+      <input type ="text" name = "Prénom" required/> <br />
 
-      <label for= "Adresse">  Adresse : </label>
-      <input type ="text" name = "Adresse"/> <br/>
+      <label for= "NomEntreprise">  Nom de l'entreprise :&nbsp;</label>
+      <input type ="text" name = "NomEntreprise" required/> <br />
 
-      <label for= "CodePostal">  Code Postal : </label>
-      <input type ="text" name = "CodePostal" maxlength="5" /> <br/>
+      <label for= "NuméroSIRET">  Numéro de SIRET :&nbsp;</label>
+      <input type ="text" name = "NuméroSIRET" required/> <br />
 
-      <label for= "AdresseMail">  Adresse Mail : </label>
-      <input type ="text" name = "AdresseMail"/> <br/>
+      <label for= "Adresse">  Adresse :&nbsp;</label>
+      <input type ="text" name = "Adresse" required/> <br />
 
-      <label for= "NuméroTéléphone">  Numéro Téléphone : </label>
-      <input type ="text" name = "NuméroTéléphone" placeholder="Numéro sans espace" size="17" maxlength="10"/>  <br/>
+      <label for= "CodePostal">  Code Postal :&nbsp;</label>
+      <input type ="text" name = "CodePostal" maxlength="5" required/> <br/>
 
-      <label for= "MotDePasse">  Mot de Passe : </label>
-      <input type ="password" name = "MotDePasse"/> <br/>
+      <label for= "AdresseMail">  Adresse Mail :&nbsp;</label>
+      <input type ="email" name = "AdresseMail" required/> <br />
 
-      <label for= "C_MotDePasse"> Confirmation Mot de Passe : </label>
-      <input type ="password" name = "C_MotDePasse"/> <br/>
+      <label for= "NuméroTéléphone">  Numéro Téléphone :&nbsp;</label>
+      <input type ="tel" name = "NuméroTéléphone" placeholder="Numéro sans espace" size="17" maxlength="10" required/>  <br />
+
+      <label for= "MotDePasse">  Mot de Passe :&nbsp;</label>
+      <input type ="password" name = "MotDePasse" required/> <br />
+
+      <label for= "C_MotDePasse"> Confirmation Mot de Passe :&nbsp;</label>
+      <input type ="password" name = "C_MotDePasse" required/> <br />
       
   
   
   </form>
   
+  <input type="submit" value="Envoyer" />
