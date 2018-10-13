@@ -12,7 +12,6 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { EditProfileComponent } from  './components/edit-Profile/edit-Profile.component';
 import { ForgottenPasswordComponent } from  './components/forgotten-password/forgotten-password.component';
 import { BddCreateComponent } from './components/bdd-create/bdd-create.component';
-
 import { BddCreateService } from './services/bdd-create.service';
 import { NewPartenairesComponent } from './components/new-partenaires/new-partenaires.component';
 import { PagePartenaireComponent } from './components/page-partenaire/page-partenaire.component';
