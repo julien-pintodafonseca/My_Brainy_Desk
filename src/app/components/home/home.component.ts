@@ -10,7 +10,7 @@ import { NgxSmartModalService } from 'ngx-smart-modal';
 export class HomeComponent implements OnInit {
 
   constructor(public ngxSmartModalService: NgxSmartModalService) {
-
+      
   }
 
   ngOnInit() {
