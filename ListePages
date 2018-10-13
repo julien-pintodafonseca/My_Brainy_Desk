@@ -1,0 +1,59 @@
+LISTE PAGES A CREER 
+====================
+X | TERMINE
+~ | EN COURS
+- | A REALISER
+====================
+
+Liste pages à créer :
+
+X Formulaire "Création d'un compte utilisateur"
+
+- Utilisateur connecté
+	- Affichage des informations utilisateur
+	- Gestion de l'ajout des logos/photos
+	- Tableau de bord de gestion
+	- Calendrier de réservation
+	- Consultation des réservations en cours
+	- Consultation des reservations annulées
+	- Consultation des réservations validées
+	~ Page d'édition / Réinitialisation mdp
+
+- Compte administrateur
+	- Tableau de bord de gestion
+	- Calendrier de réservation
+	- Consultation et gestion des partenaires
+	- Consultation et gestion des comptes utilisateur en attente
+	- Création d'un compte partenaire
+	- Réinitialisation mot de passe
+
+	- 1. Validation d'un compte utilisateur
+	   - Consulter les informations des comptes en attente de validation
+	   - Valder le compte d'un utilisateur en attente de validation
+
+- Compte partenaire
+	- Affichage des informations utilisateur
+	- Gestion de l'ajout des logos/photos
+	- Tableau de bord de gestion
+	- Consultation des réservations en cours
+	- Consultation des reservations annulées
+	- Consultation des réservations validées
+	- Réinitialisation de mot de passe 
+
+	- Consultation des annonces publiées et inactives
+	- Création d'une nouvelle annonce
+	- Gestion des disponibilités des annonces publiées ou inactives
+	- Modification des annonces publicées et inactives avec conservation
+	  des anciennes version avec date de modification
+	- Publication ou désactivation d'annonces
+	- Affichage d'un calendrier de réservation
+
+- Gestion globale des notifications
+
+- Visiteurs
+	- Consulter les annonces des partenaires
+	- Mise en place des outils de recherche
+
+- Réservation
+	- Permettre aux utilisateurs connectés de réserver
+	- Gérer l'acceptation par le partenaire
