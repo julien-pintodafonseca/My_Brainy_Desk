@@ -17,6 +17,30 @@
             <h2>Filtrer les annonces</h2>
         </section>
 
+        <form>
+        <label for="nombre_de_personne">Nombre de personnes</label>
+        <input type="radio" id="nombre_de_personne" value="0-5">
+        <input type="radio" id="nombre_de_personne" value="5-15">
+        <input type="radio" id="nombre_de_personne" value="15-25">
+        <input type="radio" id="nombre_de_personne" value="25-50">        
+
+
+        <label for="ville">Ville</label>
+        <select id="ville">
+            <option>ville1</option>
+            <option>ville2</option>
+            <option>ville3</option>
+            <option>ville4</option>
+            <option>ville5</option>
+        </select>
+
+        <label for="code_postal">Code Postal</label>
+        <input type="number" id="code_postal" maxlength="5" placeholder="ex: 89000">
+
+        <button type="submit">Rechercher</button>
+
+        </form>
+
 
         <p>ICI CHAMPS POUR LES FILTRES !!!</p>
         <p>NB personnes</p>
