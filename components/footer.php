@@ -12,7 +12,7 @@
         <div class="col-md-4" data-aos="fade-up" data-aos-delay="400" data-aos-once="true">
             <ul>
                 <li class="title"><a href="contact.php">Coordonnées</a></li>
-                <li><a href="contact.php">06 4 27 91 41</a></li>
+                <li><a href="contact.php">06 44 27 91 41</a></li>
                 <li><a href="contact.php">contact@brainytech.fr</a></li>
             </ul>
         </div>
