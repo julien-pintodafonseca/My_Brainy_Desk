@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>MBDesk - Contact</title>
+    <title>MBDesk - Mentions légales</title>
     <link rel='stylesheet' href='css/style.css'>
     <link rel="icon" href="favicon.ico">
 </head>
@@ -15,7 +15,7 @@
         <section>
             <div class="row">
                 <div class="col">
-                    <h1>Contactez-nous</h1>
+                    <h1>Mentions Légales</h1>
 					<p style="text-align:center"><a href="mailto:contact@brainytech.fr">contact@brainytech.fr</a></p>
                 </div>
             </div>

@@ -17,11 +17,11 @@
                 <a id="a-propos" class="nav-link" href="a-propos.php">À propos</a>
             </li>
             <li class="nav-item">
-                <a id="contact" class="nav-link" href="contact.php">Contact</a>
+                <a id="mentions-legales" class="nav-link" href="mentions-legales.php">Mentions légales</a>
             </li>
         </ul>
 		
-    <div class="navbar-text r-buttons">
+    <div class="navbar-text">
             <?php
             if (isset($_SESSION['id'])) {
                 echo '
