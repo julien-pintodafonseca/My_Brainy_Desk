@@ -32,13 +32,17 @@ require_once('components/class/database.php');
                     <!-- ajouter photo -->
 
                         <div class="row">
+                            <div class="col form-group">
                             <label for="titre">Titre</label>
                             <input type="text" class="form-control" name="titre" id="titre" placeholder="Titre" maxlength="50" required />
+                            </div>
                         </div>
 
                         <div class="row">
+                            <div class="col form-group">
                             <label for="description">Description</label>
                             <input type="text" class="form-control" name="titre" id="descrition" placeholder="Description" maxlength="255" required />
+                            </div>
                         </div>
 
                         <div class="row">
@@ -74,7 +78,7 @@ require_once('components/class/database.php');
                             </select>
 
                         </div>
-                        <button type="submit" class="btn btn-primary" value="Confirmer"></button>
+                        <button type="submit" class="btn btn-primary" value="confirmer">Confirmer</button>
                     </form>
                 </div>
             </div>
