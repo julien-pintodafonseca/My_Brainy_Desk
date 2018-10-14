@@ -11,7 +11,7 @@
 
     <div class="container">
 
-        <section class="profil">
+        <section>
             <div class="row">
                 <div class="col">
                     <h1>Prénom nom</h1>
@@ -21,7 +21,7 @@
         </section>
 
         
-        <section>
+        <section class="profil">
         
         <h1></h1>
         
