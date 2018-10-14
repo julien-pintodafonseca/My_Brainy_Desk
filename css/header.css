@@ -10,7 +10,7 @@ header h1 {
 }
 
 
-header div.title {
+header .container-fluid {
     background-image: url('../media/image/header/background.jpg');
     background-size: cover;
     background-repeat: no-repeat;

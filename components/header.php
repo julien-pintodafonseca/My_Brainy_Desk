@@ -1,16 +1,21 @@
 <header>
-    <div class="container-fluid title pt-4 pb-4" style="min-height:234px;">
+    <div class="container-fluid pt-4 pb-4">
 
-        <div class="row" style="background-color:white;border-radius:100px;width:567px;height:133px;padding:10px;text-align:center;align-items:center;">
-            <div class="col-4">
-              <img src="media/image/header/logo.png" class="img-responsive" width="100px" height="100px">
+
+        <div class="row text-center ml-3 mt-4 mb-4" style="background-color:white;border-radius:100px;padding:10px;align-items:center;width:567px;">
+            <div class="col-2">
+                <img src="media/image/header/logo.png" class="img-responsive" width="100px" height="100px">
             </div>
-            <div class="col-8">
-                <h1>
-                    DeskPlace
-                </h1>
+            <div class="col">
+                <h1>//MBDesk::</h1>
             </div>
         </div>
+        <div class="col">
+
+
+        </div>
+
+
 
     </div>
 
