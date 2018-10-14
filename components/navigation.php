@@ -8,23 +8,54 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="index.php">Accueil</a>
+            <li class="nav-item">
+                <a id="accueil" class="nav-link" href="index.php">Accueil</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="annonces.php">Annonces</a>
+                <a id="annonces" class="nav-link" href="annonces.php">Annonces</a>
             </li>            
             <li class="nav-item">
-                <a class="nav-link" href="partenaires.php">Partenaires</a>
+                <a id="partenaires" class="nav-link" href="partenaires.php">Partenaires</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="contact.php">À propos</a>
+                <a id="a-propos" class="nav-link" href="a-propos.php">À propos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="contact.php">Contact</a>
+                <a id="contact" class="nav-link" href="contact.php">Contact</a>
             </li>
 
         </ul>
     </div>
 </nav>
+
+
+
+<script>
+    var currentLocation = window.location.href;
+    var activePage;
+
+    if (currentLocation == "https://www.inkandev.fr/mybrainydesk/" || currentLocation == "https://www.inkandev.fr/mybrainydesk/index.php") {
+        activePage = "accueil";
+    }
+
+    if (currentLocation == "https://www.inkandev.fr/mybrainydesk/annonces.php") {
+        activePage = "annonces";
+    }
+
+    if (currentLocation == "https://www.inkandev.fr/mybrainydesk/partenaires.php") {
+        activePage = "partenaires";
+    }
+
+    if (currentLocation == "https://www.inkandev.fr/mybrainydesk/a-propos.php") {
+        activePage = "a-propos";
+    }
+
+    if (currentLocation == "https://www.inkandev.fr/mybrainydesk/contact.php") {
+        activePage = "contact";
+    }
+
+    document.getElementById(activePage).classList.add("active");
+
+</script>
+
 
