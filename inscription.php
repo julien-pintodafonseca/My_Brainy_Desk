@@ -38,7 +38,8 @@
 							&& isset($_POST['email'])
 							&& isset($_POST['tel'])
 							&& isset($_POST['mdp'])
-							&& isset($_POST['c_mdp']);
+							&& isset($_POST['c_mdp'])
+                            && isset($_POST['ville']);
 
 						if ($formExist) {
 							$valid = true;
@@ -52,7 +53,8 @@
 								&& strlen($_POST['prenom']) <= 255
 								&& strlen($_POST['entreprise']) <= 255
 								&& strlen($_POST['adresse']) <= 255
-								&& strlen($_POST['email']) <= 255;
+								&& strlen($_POST['email']) <= 255
+                                && strlen($_POST['ville']);
 
 							if (!$formIsOk) {
 								echo("Les informations saisies ne sont pas correctes !<br />");
@@ -70,18 +72,34 @@
 									echo("L'adresse email est incorrecte !<br />");
 									$valid = false;
 								}
-								if (strpos($_POST['tel'], ' ')) {
-									echo("Le numéro de téléphone ne doit pas contenir d'espace(s) !<br />");
+								if ($_POST['tel']) {
+									echo("Le numéro de téléphone n'est pas un numéro valide !<br />");
 									$valid = false;
 								}
 								if (strlen($_POST['tel']) != 10) {
-									echo("Le numéro de téléphone est incorrecte !<br />");
+									echo("Le numéro de téléphone est incorrect !<br />");
 									$valid = false;
 								}
 								if ($_POST['mdp'] != $_POST['c_mdp']) {
 									echo("Les deux mot de passes ne sont pas identiques !<br />");
 									$valid = false;
 								}
+
+								$reqVerifMail = $bdd->prepare('SELECT COUNT(*) nombre FROM utilisateur WHERE email = :email');
+								$reqVerifMail->execute(array("email" => $_POST['email']));
+								$nombre = $reqVerifMail->fetch()['nombre'];
+								if($nombre) {
+                                    echo("Un utilisateur existe déjà avec cette adresse mail.<br />");
+                                    $valid = false;
+                                }
+
+                                $reqVerifSiret = $bdd->prepare('SELECT COUNT(*) nombre FROM utilisateur WHERE siret = :siret');
+								$reqVerifSiret->execute(array("siret" => $_POST['siret']));
+								$nombre = $reqVerifSiret->fetch()['nombre'];
+								if($nombre) {
+								    echo "Un utilisateur existe déjà avec ce numéro SIRET.<br />";
+								    $valid = false;
+                                }
 							}
 
 							if ($valid) {
@@ -92,8 +110,25 @@
 								$cp = $_POST['cp'];
 								$email = $_POST['email'];
 								$tel = $_POST['tel'];
-								$mdp = md5($_POST['mdp']);
-								
+								$adresse = $_POST['adresse'];
+								$ville = $_POST['ville'];
+								$mdp = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
+
+								$bdd = Database::bdd();
+								$requete = $bdd->prepare('INSERT INTO utilisateur (email, password, prenom, nom, nomentreprise, siret, telephone, adresse, codepostal, ville) VALUES(:email, :password, :prenom, :nom, :nomentreprise, :siret, :telephone, :adresse, :codepostal, :ville) ');
+								$requete->execute(array(
+								    "email" => $email,
+                                    "password" => $mdp,
+                                    "prenom" => $prenom,
+                                    "nom" => $nom,
+                                    "nomentreprise" => $entreprise,
+                                    "siret" => $siret,
+                                    "telephone" => $tel,
+                                    "adresse" => $adresse,
+                                    "codepostal" => $cp,
+                                    "ville" => $ville
+                                ));
+
 								echo("<span style=\"color:green\">Inscription validée avec succès !</span>");
 								//INSERT SQL infos validées
 							}
@@ -117,10 +152,13 @@
 						<input type="text" name="adresse" placeholder="Adresse" maxlength="255" required/><br />
 
 						<label for="cp">Code Postal :&nbsp;</label>
-						<input type="text" name="cp" placeholder="CP" maxlength="5" required/><br/>
+						<input type="text" name="cp" placeholder="CP" maxlength="5" required/><br />
+
+                        <label for="ville">Ville :&nbsp;</label>
+                        <input type="text" name="ville" id="ville" placeholder="Ville" maxlength="255" required /><br />
 
 						<label for="email">Adresse Mail :&nbsp;</label>
-						<input type="email" name="email" placeholder="Email" maxlength="255" required/><br />
+						<input type="email" name="email" placeholder="mail@example.tld" maxlength="255" required/><br />
 
 						<label for="tel">Numéro Téléphone :&nbsp;</label>
 						<input type="tel" name="tel" placeholder="Numéro sans espace" size="17" maxlength="10" required/><br />
