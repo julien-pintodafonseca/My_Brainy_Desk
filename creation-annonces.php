@@ -80,11 +80,38 @@ require_once('components/class/database.php');
                                 </select>
                             </div>
                         </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="capacite"><i class="material-icons">people</i> Capacité</label>
+                                    <select name="capacite" id="capacite" class="form-control">
+                                        <option value="1-10">1 à 10 personnes</option>
+                                        <option value="11-25">11 à 25 personnes</option>
+                                        <option value="25+">Plus de 25 personnes</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!--
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="tarif_max"><i class="material-icons">attach_money</i>  Prix horaire maximum</label>
+                                <select id="tarif_max" class="form-control">
+                                    <option>25€/h</option>
+                                    <option>50€/h</option>
+                                    <option>100€/h</option>
+                                    <option>250€/h</option>
+                                </select>
+                            </div>
+                        </div>
+                        -->
+                        
                         <button type="submit" class="btn btn-primary" value="confirmer">Confirmer</button>
                     </form>
 
                     <?php
-                        $_POST['capacite'] = 5; //capacité à reprendre depuis le formulaire (supprimer cette ligne)
 
                         $check = isset($_POST['titre'])
                         && isset($_POST['adresse'])
