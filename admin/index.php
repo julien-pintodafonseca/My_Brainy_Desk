@@ -22,10 +22,49 @@ require_once "../components/class/database.php";
         }
     }
     if(isset($_SESSION['adminlogged']) && $_SESSION['adminlogged']) {
-    ?>
-    <h1>Bienvenue dans la zone d'administration</h1>
-    <!-- TODO : Panneau d'administration -->
-    <?php
+        ?>
+        <h1>Bienvenue dans la zone d'administration</h1>
+        <a href="partenaires.php">Voir les partenaires</a>
+        <h2>Utilisateurs en attente de validation.</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Identifiant</th>
+                    <th>Email</th>
+                    <th>Prénom</th>
+                    <th>Nom</th>
+                    <th>Nom de l'entreprise</th>
+                    <th>N° SIRET</th>
+                    <th>Téléphone</th>
+                    <th>Adresse</th>
+                    <th>Code postal</th>
+                    <th>Ville</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            <?php
+            $requete = $bdd->query('SELECT * FROM Utilisateur WHERE verifie = 0;');
+            while($infos = $requete->fetch()) {
+                echo '<tr>
+                    <td>'.$infos['id'].'</td>
+                    <td>'.$infos['email'].'</td>
+                    <td>'.$infos['prenom'].'</td>
+                    <td>'.$infos['nom'].'</td>
+                    <td>'.$infos['nomentreprise'].'</td>
+                    <td>'.$infos['siret'].'</td>
+                    <td>'.$infos['telephone'].'</td>
+                    <td>'.$infos['adresse'].'</td>
+                    <td>'.$infos['codepostal'].'</td>
+                    <td>'.$infos['ville'].'</td>
+                    <td><a href="approve.php?id='.$infos['id'].'">Approuver</a><br />
+                    <a href="delete.php?id='.$infos['id'].'">Supprimer</a></td>
+                </tr>';
+            }
+            ?>
+            </tbody>
+        </table>
+        <?php
     }
     else {
     ?>
