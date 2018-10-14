@@ -29,26 +29,7 @@ require_once('components/class/database.php');
         <section>
             <div class="row">
                 <div class="col">
-                    <?php
-                        $check = isset($_POST['titre'])
-                        && isset($_POST['adresse'])
-                        && isset($_POST['codepostal'])
-                        && isset($_POST['ville'])
-                        && isset($_POST['capacite'])
-                        && isset($_POST['details'])
-                        && isset($_POST['type']);
-
-                        if ($check) {
-                            $titre = $_POST['titre'];
-                            $adresse = $_POST['adresse'];
-                            $codepostal = $_POST['codepostal'];
-                            $ville = $_POST['ville'];
-                            $capacite = $_POST['capacite'];
-                            $details = $_POST['details'];
-                            $type = $_POST['type'];
-                        }
-                    ?>
-                    <form action="" method="post" id="annonce-form">
+                    <form action="#" method="post" id="annonce-form">
 
                     <!-- ajouter photo -->
 
@@ -91,11 +72,11 @@ require_once('components/class/database.php');
                         <div class="row">
                             <div class="col form-group">
                                 <label for="type">Type de location</label>
-                                <select id="type" class="form-control">
-                                    <option>Bureau</option>
-                                    <option>Espace de Co-working</option>
-                                    <option>Salle de réunion</option>
-                                    <option>Salle de formation</option>
+                                <select id="type" name="type" class="form-control">
+                                    <option value="0">Bureau</option>
+                                    <option value="1">Espace de Co-working</option>
+                                    <option value="2">Salle de réunion</option>
+                                    <option value="3">Salle de formation</option>
                                 </select>
                             </div>
                         </div>
@@ -103,7 +84,25 @@ require_once('components/class/database.php');
                     </form>
 
                     <?php
+                        $_POST['capacite'] = 5; //capacité à reprendre depuis le formulaire (supprimer cette ligne)
+
+                        $check = isset($_POST['titre'])
+                        && isset($_POST['adresse'])
+                        && isset($_POST['codepostal'])
+                        && isset($_POST['ville'])
+                        && isset($_POST['capacite'])
+                        && isset($_POST['details'])
+                        && isset($_POST['type']);
+
                         if ($check) {
+                            $titre = $_POST['titre'];
+                            $adresse = $_POST['adresse'];
+                            $codepostal = $_POST['codepostal'];
+                            $ville = $_POST['ville'];
+                            $capacite = $_POST['capacite'];
+                            $details = $_POST['details'];
+                            $type = $_POST['type'];
+                        
                             $bdd = Database::bdd();
 
                             $requete = $bdd->prepare('INSERT INTO Annonce (titre, adresse, codepostal, ville, capacite, details, type) VALUES(:titre, :adresse, :codepostal, :ville, :capacite, :details, :type); ');
@@ -116,6 +115,12 @@ require_once('components/class/database.php');
                                 "details" => $details,
                                 "type" => $type
                             ));
+                            
+                            if ($requete) {
+                                echo('<p>Annonce ajoutées avec succès !</p>');
+                            } else {
+                                echo('<p>La création de l\'annonce n\a pas aboutie !</p>');
+                            }
                         }
                     ?>
                 </div>
