@@ -68,7 +68,10 @@ p {
 
 
 
-
+.annonce {
+    min-height: 234px;
+    box-shadow: 0 0 11px rgba(0, 0, 0, .21);    
+}
 
 
 

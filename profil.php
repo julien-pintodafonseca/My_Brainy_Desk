@@ -14,17 +14,19 @@
         <section>
             <div class="row">
                 <div class="col">
-                    <h1>Prénom nom</h1>
-                    <h2></h2>
+                    <h1>Mon profil</h1>
                 </div>
             </div>
         </section>
 
         
         <section class="profil">
-        
-        <h1></h1>
-        
+            <div class="row">
+                <div class="col">
+                    <h1>Prénom nom</h1>
+                    <h2>monmail@lemail.fr</h2>
+                </div>
+            </div>
         
         </section>
         

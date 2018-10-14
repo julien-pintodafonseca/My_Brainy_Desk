@@ -38,14 +38,7 @@ h5 {
 
 
 
-
-
-.annonce, .profil h2 {
-    min-height: 234px;
-    box-shadow: 0 0 11px rgba(0, 0, 0, .21);    
-}
-
-.annonce h1, .profil h2 {
+.annonce h1, .profil h1 {
     font-size: 33px;
     text-align: left;
 }
