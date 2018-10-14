@@ -186,7 +186,7 @@
             $adresse = $row['adresse'];
             $codepostal = $row['codepostal'];
             $ville = $row['ville'];
-            $detail = $row['details'];
+            $details = $row['details'];
         ?>
         
         <div class="row annonce">
@@ -196,7 +196,7 @@
                     <?php echo $titre; ?>
                 </h1>
                 <h2 class="mb-0"><i class="material-icons">attach_money</i>
-                    <?php echo $prix ?>€/heure</h2>
+                    <?php echo $prix; ?>€/heure</h2>
                 <h2 class="mb-0"><i class="material-icons">place</i>
                     <?php echo $adresse.", ".$codepostal." ".$ville; ?>
                 </h2>
