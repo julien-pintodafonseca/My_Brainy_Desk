@@ -11,7 +11,7 @@ require_once('components/class/database.php');
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>MBDesk - Création annonce</title>
     <link rel="shortcut icon" href="favicon.png" />
-    <link rel='stylesheet' href='css/style.css'>
+    <link rel='stylesheet' href='css/style.css' />
 </head>
 
 <body>
