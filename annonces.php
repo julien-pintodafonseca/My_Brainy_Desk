@@ -117,11 +117,12 @@
         // AJOUTER LA/LES PHOTOS !!!!!!!!
         // + récupérer ordre : DESC/ASC ?
 
+        /*
         $query = "SELECT
             titre, type, adresse, codepostal, ville, details
         FROM
             Annonce;";
-        
+        */
     
         /*
         $query = '
@@ -141,26 +142,52 @@
                 OR (Annonce.capacite <= '.$_nbPersonnes_max.')
                 )
             AND (
-                ('.$_ville.' IS NULL)
-                OR (Annonce.ville = '.$_ville.')
+                (\''.$_ville.'\' IS NULL)
+                OR (Annonce.ville = \''.$_ville.'\')
                 )
             AND (
                 ('.$_codePostal.' IS NULL)
                 OR (Annonce.codePostal = '.$_codePostal.')
                 );';
         */
+
+        $query = '
+            SELECT
+                titre, type, adresse, codepostal, ville, details, prix, duree
+            FROM
+                Annonce
+                JOIN Annonce_Tarif ON Annonce.id = Annonce_Tarif.Annonceid
+                JOIN Tarif ON Annonce_Tarif.Tarifid = Tarif.id
+            WHERE
+                (
+                    (NULL IS NULL)
+                    OR (Annonce.capacite >= NULL)
+                    )
+                AND (
+                    (NULL IS NULL)
+                    OR (Annonce.capacite <= NULL)
+                    )
+                AND (
+                    (\''.$_ville.'\' IS NULL)
+                    OR (Annonce.ville = \''.$_ville.'\')
+                    )
+                AND (
+                    (NULL IS NULL)
+                    OR (Annonce.codePostal = NULL)
+                    );';
+
         
-            $result = $bdd->query($query)->fetchAll();
+        $result = $bdd->query($query)->fetchAll();
 
         foreach ($result as $row) {
             $titre = $row['titre'];
-            /*$type = $row['type'];
+            $type = $row['type'];
             $prix = $row['prix'];
             $duree = $row['duree'];
             $adresse = $row['adresse'];
             $codepostal = $row['codepostal'];
             $ville = $row['ville'];
-            $detail = $row['details'];*/
+            $detail = $row['details'];
         ?>
         
         <div class="row annonce">
