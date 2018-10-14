@@ -23,7 +23,7 @@
         
         <section>
             <a class="highlight" href="#filtrer" data-toggle="collapse">Filtrer les annonces</a>
-            <div class="collapse mt-3" id="filtrer">
+            <div class="collapse mt-3 mb-5" id="filtrer">
                 <form>
                     <div class="row">
                         <div class="col">
@@ -53,7 +53,7 @@
                         </div>
                         <div class="col">
                             <div class="form-group">
-                                <label for="tarif_max"><i class="material-icons">attach_money</i> Prix horaire maximum</label>
+                                <label for="tarif_max"><i class="material-icons">attach_money</i>  Prix horaire maximum</label>
                                 <select id="tarif_max" class="form-control">
                                     <option>25€/h</option>
                                     <option>50€/h</option>
@@ -69,9 +69,11 @@
                 </form>
             </div>
             
+            <h2>Résultat de la recherche</h2>
+            
             
 
-        <div class="row annonce mt-5 mb-5">
+        <div class="row annonce mt-4 mb-5">
             <div class="col-4" style="background-image:url('media/image/office.jpg');background-repeat:no-repeat;background-size:cover;background-position:center;"></div>
             <div class="col pt-2 ml-1">
                 <h1 class="mb-2">Salle de réunion foireuse</h1>
@@ -191,7 +193,7 @@
             $details = $row['details'];
         ?>
         
-        <div class="row annonce">
+        <div class="row mt-4 mb-5annonce">
             <div class="col-4" style="background-image:url('media/image/office.jpg');background-repeat:no-repeat;background-size:cover;background-position:center;"></div>
             <div class="col pt-2 ml-1">
                 <h1 class="mb-2">
