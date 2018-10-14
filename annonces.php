@@ -11,7 +11,6 @@
 
     <div class="container">
 
-
         <section>
             <h1>Parcourir les annonces</h1>
             <h2>Filtrer les annonces</h2>
@@ -45,9 +44,8 @@
 
         <br />
 
-        
-        <select id="ville" class="form-control">
         <label for="ville">Ville :&nbsp</label>
+        <select id="ville" class="form-control">        
             <option>ville1</option>
             <option>ville2</option>
             <option>ville3</option>
@@ -56,7 +54,6 @@
         </select>
 
         <br />
-
         
         <input class="form-group" type="text" id="code_postal" maxlength="5" placeholder="ex: 89000">
         <label for="code_postal">Code Postal</label>
@@ -66,28 +63,8 @@
         <button type="submit" class="btn btn-primary">Rechercher</button>
 
         </form>
-        <br />
-
-        <form>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox" value="option1">
-                <label class="form-check-label" for="inlineCheckbox">0 à 10</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox" value="option2">
-                <label class="form-check-label" for="inlineCheckbox">10 à 25</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox" value="option2">
-                <label class="form-check-label" for="inlineCheckbox">25 et plus</label>
-            </div>
-
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
 
 
-        
-        
         
         <div class="row annonce">
             <div class="col-4" style="background-image:url('media/image/office.jpg');background-repeat:no-repeat;background-size:cover;background-position:center;"></div>
