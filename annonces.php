@@ -27,16 +27,16 @@
 
         <form>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                <label class="form-check-label" for="inlineCheckbox1">0 à 10</label>
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox" value="option1">
+                <label class="form-check-label" for="inlineCheckbox">0 à 10</label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                <label class="form-check-label" for="inlineCheckbox2">10 à 25</label>
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox" value="option2">
+                <label class="form-check-label" for="inlineCheckbox">10 à 25</label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                <label class="form-check-label" for="inlineCheckbox2">25 et plus</label>
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox" value="option2">
+                <label class="form-check-label" for="inlineCheckbox">25 et plus</label>
             </div>
 
             <button type="submit" class="btn btn-primary">Submit</button>
