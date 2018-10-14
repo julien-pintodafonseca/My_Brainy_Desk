@@ -3,7 +3,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav mr-auto">
             <li class="nav-item">
                 <a id="accueil" class="nav-link" href="index.php">Accueil</a>
             </li>
@@ -19,32 +19,36 @@
             <li class="nav-item">
                 <a id="contact" class="nav-link" href="contact.php">Contact</a>
             </li>
-            <?php
-            if (isset($_SESSION['id'])) {
-                echo '
-                    <li class="nav-item">
-                        <a id="profil" class="highlight" href="profil.php">Mon profil</a>
-                    </li>
-                    <li class="nav-item">
-                        <a id="deconnexion" class="highlight" href="deconnexion.php">Se déconnecter</a>
-                    </li>     
-                ';
-            } else {
-                echo '
-                    <li class="nav-item">
-                        <a id="connexion" class="highlight" href="connexion.php">Se connecter</a>
-                    </li>
-                    <li class="nav-item">
-                        <a id="inscription" class="highlight" href="inscription.php">Créer un compte</a>
-                    </li>  
-                ';                
-            }
+ 
             
-            ?>
+            
+
 
 
 
         </ul>
+        
+        
+        
+    <span class="navbar-text">
+            <?php
+            if (isset($_SESSION['id'])) {
+                echo '
+                        <a id="profil" class="highlight" href="profil.php">Mon profil</a>
+
+                        <a id="deconnexion" class="highlight" href="deconnexion.php">Se déconnecter</a>
+                ';
+            } else {
+                echo '
+                        <a id="connexion" class="highlight" href="connexion.php">Se connecter</a>
+
+                        <a id="inscription" class="highlight" href="inscription.php">Créer un compte</a>
+                ';                
+            }
+            
+            ?>
+                </span>            
+                   
     </div>
 </nav>
 
