@@ -22,19 +22,19 @@
         </section>
         
         <section>
-            <h2><a href="#filtrer" data-toggle="collapse">Filtrer les annonces</a></h2>
-            <div class="collapse" id="filtrer">
+            <a class="highlight" href="#filtrer" data-toggle="collapse">Filtrer les annonces</a>
+            <div class="collapse mt-3" id="filtrer">
                 <form>
                     <div class="row">
                         <div class="col">
                             <div class="form-group">
-                                <label for="ville">Ville</label>
+                                <label for="ville"><i class="material-icons">location_city</i> Ville</label>
                                 <input type="text" class="form-control" id="ville" placeholder="ex: Dijon">
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-group">
-                                <label for="code_postal">Code Postal</label>
+                                <label for="code_postal"><i class="material-icons">map</i> Code Postal</label>
                                 <input type="text" class="form-control" id="code_postal" placeholder="ex: 21000">
                             </div>
                         </div>
@@ -43,7 +43,7 @@
                     <div class="row">
                         <div class="col">
                             <div class="form-group">
-                                <label for="nombre_de_personne">Capacité</label>
+                                <label for="nombre_de_personne"><i class="material-icons">people</i> Capacité</label>
                                 <select id="nombre_de_personne" class="form-control">
                                     <option value="1-10">1 à 10 personnes</option>
                                     <option value="11-25">11 à 25 personnes</option>
@@ -53,7 +53,7 @@
                         </div>
                         <div class="col">
                             <div class="form-group">
-                                <label for="tarif_max">Prix horaire maximum</label>
+                                <label for="tarif_max"><i class="material-icons">attach_money</i> Prix horaire maximum</label>
                                 <select id="tarif_max" class="form-control">
                                     <option>25€/h</option>
                                     <option>50€/h</option>
@@ -68,9 +68,10 @@
 
                 </form>
             </div>
-        </section>
+            
+            
 
-        <div class="row annonce mb-5">
+        <div class="row annonce mt-5 mb-5">
             <div class="col-4" style="background-image:url('media/image/office.jpg');background-repeat:no-repeat;background-size:cover;background-position:center;"></div>
             <div class="col pt-2 ml-1">
                 <h1 class="mb-2">Salle de réunion foireuse</h1>
