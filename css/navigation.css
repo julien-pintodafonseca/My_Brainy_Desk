@@ -18,3 +18,7 @@ nav .highlight:hover {
 .navbar-text {
     padding-right: 3%;
 }
+
+nav .material-icons {
+    vertical-align: top;
+}
