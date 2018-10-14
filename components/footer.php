@@ -29,7 +29,7 @@
     
     <div class="row">
         <div class="col" id="legal-mentions" data-aos="fade-up" data-aos-delay="100" data-aos-once="true">
-            <span>©2018 MBDesk. Tous droits réservés.</span>
+            <span>© 2018 MBDesk - <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode.fr">CC BY SA 4.0</a></span>
         </div>
     </div>
 
