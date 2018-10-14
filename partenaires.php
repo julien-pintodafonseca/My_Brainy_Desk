@@ -24,6 +24,8 @@
             </div>
         </section>
 
+        <!-- affiche chacun des partenaires de la bdd -->
+        
         <div class="row annonce">
             <div class="col-4" style="background-image:url('media/image/partenaires.jpg');background-repeat:no-repeat;background-size:cover;background-position:center;"></div>
             <div class="col pt-2 ml-1">
