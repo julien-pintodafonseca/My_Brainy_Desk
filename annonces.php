@@ -1,7 +1,10 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="fr">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>MBDesk - Annonces</title>
     <link rel='stylesheet' href='css/style.css'>
     <link rel="icon" href="favicon.ico">
@@ -64,8 +67,6 @@
             </form>
         </section>
 
-
-
         <div class="row annonce">
             <div class="col-4" style="background-image:url('media/image/office.jpg');background-repeat:no-repeat;background-size:cover;background-position:center;"></div>
             <div class="col pt-2 ml-1">
@@ -76,9 +77,6 @@
                 <p>La salle de réunion Angular est située en plein coeur du XIIe arrondissement de Dijon, qui n'existe pas.</p>
             </div>
         </div>
-
-
-
 
         <?php require_once("config/database.php");
 
@@ -92,7 +90,6 @@
             JOIN Tarif ON Annonce_Tarif.Tarifid = Tarif.id;
         ')->fetchAll(); 
 
-        
         foreach ($query as $row) {
             $titre = $row['titre'];
             $type = $row['type'];
@@ -127,21 +124,14 @@
         }
         ?>
 
-
         <?php include("components/footer.php") ?>
 
     </div>
-
 
     <script src="lib/jquery/jquery-3.3.1.min.js"></script>
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
     <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="lib/aos/aos.js"></script>
-
-    <script>
-        AOS.init();
-
-    </script>
 
 </body>
 
