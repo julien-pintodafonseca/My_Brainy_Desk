@@ -22,8 +22,8 @@
         </section>
         
         <section>
-            <h2><a data-toggle="collapse">Filtrer les annonces</a></h2>
-            <div class="panel-collapse collapse">
+            <h2><a href="#filtrer" data-toggle="collapse">Filtrer les annonces</a></h2>
+            <div class="collapse" id="filtrer">
                 <form>
                     <div class="row">
                         <div class="col">
