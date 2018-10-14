@@ -111,7 +111,8 @@
         // AJOUTER LA/LES PHOTOS !!!!!!!!
         // + récupérer ordre : DESC/ASC ?
 
-        $query = $BDD->query('
+        $BDD = Database::bdd();
+        $query = $BDD->execute('
         SELECT
             titre, type, adresse, codepostal, ville, details, prix, duree
         FROM
@@ -146,8 +147,10 @@
             $codepostal = $row['codepostal'];
             $ville = $row['ville'];
             $detail = $row['details'];
-        ?>
 
+
+        ?>
+        
         <div class="row annonce">
             <div class="col-4" style="background-image:url('media/image/office.jpg');background-repeat:no-repeat;background-size:cover;background-position:center;"></div>
             <div class="col pt-2 ml-1">
@@ -169,9 +172,7 @@
 
         <?php       
         }
-        ?>
-
-        <?php include("components/footer.php") ?>
+        include("components/footer.php") ?>
 
     </div>
 
