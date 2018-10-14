@@ -27,10 +27,10 @@
 
         <section>
             <div class="row" style="align-items:center;">
-                <div class="col-5 text-center">
+                <div class="col-sm-12 col-md-5 mb-5 text-center">
                     <img src="media/image/accueil/environnement.jpg" alt="Environnement de travail" style="max-height:600px;width:auto;">
                 </div>
-                <div class="col">
+                <div class="col-sm-12 col-md-7">
                     <h2 class="mb-3">Multipliez votre productivité</h2>
                     <p class="mb-4">
                         Vous êtes un entrepreneur indépendant ou une jeune startup qui ne dispose pas des moyens d'investir dans un bureau ? Retrouvez ponctuellement un environnement de travail inspirant et pensé pour l'échange à l'aide de MBDesk et augmentez votre productivité de manière exponentielle. Réservez dès maintenant.
