@@ -88,11 +88,11 @@
         
         <br />
 
-
         <button type="submit" class="btn btn-primary">Rechercher</button>
 
         </form>
 
+        <br />
 
         
         <div class="row annonce">
