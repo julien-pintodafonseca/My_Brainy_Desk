@@ -1,6 +1,7 @@
 <?php session_start(); ?>
 <?php
 require_once('components/class/database.php');
+if(!isset($_SESSION['id']) || !$_SESSION['id']) {
 ?>
 <!doctype html>
 <html>
@@ -41,7 +42,7 @@ require_once('components/class/database.php');
 							&& isset($_POST['mdp'])
 							&& isset($_POST['c_mdp'])
                             && isset($_POST['ville']);
-                        
+
 						if ($formExist) {
 							$valid = true;
 
@@ -62,7 +63,7 @@ require_once('components/class/database.php');
                                     <div class="alert alert-danger" role="alert">
                                         Les informations saisies ne sont pas correctes !
                                     </div>
-                                    ');                                  
+                                    ');
 								$valid = false;
 							} else {
 								if (strlen($_POST['siret']) != 14) {
@@ -70,7 +71,7 @@ require_once('components/class/database.php');
                                     <div class="alert alert-danger" role="alert">
                                         Le numéro de SIRET doit contenir 14 chiffres !
                                     </div>
-                                    ');                                    
+                                    ');
 									$valid = false;
 								}
 								if (strlen($_POST['cp']) != 5) {
@@ -78,7 +79,7 @@ require_once('components/class/database.php');
                                     <div class="alert alert-danger" role="alert">
                                         Le code postal doit contenir 5 chiffres !
                                     </div>
-                                    ');                                    
+                                    ');
 									$valid = false;
 								}
 								if (!strpos($_POST['email'], '@') && !strpos($_POST['email'], '.') || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
@@ -86,7 +87,7 @@ require_once('components/class/database.php');
                                     <div class="alert alert-danger" role="alert">
                                         L\'adresse email est incorrecte !
                                     </div>
-                                    ');                                    
+                                    ');
 									$valid = false;
 								}
 								if (strlen($_POST['tel']) != 10) {
@@ -94,7 +95,7 @@ require_once('components/class/database.php');
                                     <div class="alert alert-danger" role="alert">
                                         Le numéro de téléphone est incorrect !
                                     </div>
-                                    ');                                    
+                                    ');
 									$valid = false;
 								}
 								if ($_POST['mdp'] != $_POST['c_mdp']) {
@@ -102,7 +103,7 @@ require_once('components/class/database.php');
                                     <div class="alert alert-danger" role="alert">
                                         Les deux mot de passes ne sont pas identiques !
                                     </div>
-                                    ');                                    
+                                    ');
 									$valid = false;
 								}
 
@@ -119,7 +120,7 @@ require_once('components/class/database.php');
                                     ');
                                     $valid = false;
                                 }
-								
+
                                 $reqVerifSiret = $bdd->prepare('SELECT COUNT(*) nombre FROM Utilisateur WHERE siret = :siret');
 								$reqVerifSiret->execute(array("siret" => $_POST['siret']));
 								$nombre = $reqVerifSiret->fetch()['nombre'];
@@ -171,7 +172,7 @@ require_once('components/class/database.php');
                                 }
 							}
 						}
-                        
+
 					?>
                     </p>
                 </div>
@@ -264,3 +265,9 @@ require_once('components/class/database.php');
 </body>
 
 </html>
+<?php
+}
+else {
+    header('Location: index.php');
+}
+    ?>

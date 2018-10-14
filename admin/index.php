@@ -14,8 +14,8 @@ require_once "../components/class/database.php";
         $bdd = Database::bdd();
         $requete = $bdd->prepare('SELECT * FROM Admin WHERE email = :email');
         $requete->execute(array("email" => $_POST['email']));
-        if($pass = $requete->fetch()['password']) {
-            if(password_verify($_POST['password'], $pass)) {
+        if($infos = $requete->fetch()) {
+            if(password_verify($_POST['password'], $infos)) {
                 $_SESSION['adminlogged'] = true;
                 $success = true;
             }
