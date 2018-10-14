@@ -1,3 +1,7 @@
+<?php
+require_once('components/class/database.php');
+?>
+<!doctype html>
 <html>
 
 <head>
@@ -11,24 +15,22 @@
 
     <div class="container">
 
-        <section class="mb-5">
+        <section>
             <div class="row">
                 <div class="col">
-                    <h1>Inscription</h1>
-                    <p class="text-center">Créez votre compte MBDesk</p>
+                    <h1>Bienvenue sur <span>MBDesk</span></h1>
+                    <p class="text-center">La plateforme de location d'espaces professionnels</p>
                 </div>
             </div>
         </section>
-
+		
         <section>
             <div class="row">
                 <div class="col">
                     <h2 class="text-center mb-2">Formulaire d'inscription</h2>
-                    <br />
-                    <p style="color:red">
-                        <?php
-						include('config.database.php');
-
+					<br />
+					<p style="color:red">
+					<?php
 						$formExist = isset($_POST['nom'])
 							&& isset($_POST['prenom'])
 							&& isset($_POST['entreprise'])
@@ -54,7 +56,7 @@
 								&& strlen($_POST['entreprise']) <= 255
 								&& strlen($_POST['adresse']) <= 255
 								&& strlen($_POST['email']) <= 255
-								&& strlen($_POST['ville']);
+                                && strlen($_POST['ville']);
 
 							if (!$formIsOk) {
 								echo("Les informations saisies ne sont pas correctes !<br />");
@@ -72,6 +74,10 @@
 									echo("L'adresse email est incorrecte !<br />");
 									$valid = false;
 								}
+								if (!$_POST['tel']) {
+									echo("Le numéro de téléphone n'est pas un numéro valide !<br />");
+									$valid = false;
+								}
 								if (strlen($_POST['tel']) != 10) {
 									echo("Le numéro de téléphone est incorrect !<br />");
 									$valid = false;
@@ -81,7 +87,9 @@
 									$valid = false;
 								}
 
-								$reqVerifMail = $bdd->prepare('SELECT COUNT(*) nombre FROM utilisateur WHERE email = :email');
+                                $bdd = Database::bdd();
+
+                                $reqVerifMail = $bdd->prepare('SELECT COUNT(*) nombre FROM Utilisateur WHERE email = :email');
 								$reqVerifMail->execute(array("email" => $_POST['email']));
 								$nombre = $reqVerifMail->fetch()['nombre'];
 								if($nombre) {
@@ -89,7 +97,7 @@
                                     $valid = false;
                                 }
 
-                                $reqVerifSiret = $bdd->prepare('SELECT COUNT(*) nombre FROM utilisateur WHERE siret = :siret');
+                                $reqVerifSiret = $bdd->prepare('SELECT COUNT(*) nombre FROM Utilisateur WHERE siret = :siret');
 								$reqVerifSiret->execute(array("siret" => $_POST['siret']));
 								$nombre = $reqVerifSiret->fetch()['nombre'];
 								if($nombre) {
@@ -110,8 +118,7 @@
 								$ville = $_POST['ville'];
 								$mdp = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
 
-								$bdd = Database::bdd();
-								$requete = $bdd->prepare('INSERT INTO utilisateur (email, password, prenom, nom, nomentreprise, siret, telephone, adresse, codepostal, ville) VALUES(:email, :password, :prenom, :nom, :nomentreprise, :siret, :telephone, :adresse, :codepostal, :ville) ');
+								$requete = $bdd->prepare('INSERT INTO Utilisateur (email, password, prenom, nom, nomentreprise, siret, telephone, adresse, codepostal, ville, type, verifie) VALUES(:email, :password, :prenom, :nom, :nomentreprise, :siret, :telephone, :adresse, :codepostal, :ville, 0, 0); ');
 								$requete->execute(array(
 								    "email" => $email,
                                     "password" => $mdp,
@@ -125,110 +132,53 @@
                                     "ville" => $ville
                                 ));
 
-								echo("<span style=\"color:green\">Inscription validée avec succès !</span>");
+								if($requete) {
+                                    echo("<span style=\"color:green\">Inscription validée avec succès !</span>");
+                                }
+                                else {
+                                    echo("Une erreur est survenue lors de l'inscription. Merci de prévenir l'administrateur.");
+                                }
+								//INSERT SQL infos validées
 							}
 						}
 					?>
-                    </p>
+					</p>
+					<form action="#" method="post" id="registration-form">
+						<label for="nom">Nom :&nbsp;</label>
+						<input type="text" name="nom" placeholder="Nom" maxlength="255" required/><br />
 
+						<label for="prenom">Prénom :&nbsp;</label>
+						<input type="text" name="prenom" placeholder="Prénom" maxlength="255" required/><br />
 
+						<label for="entreprise">Nom de l'entreprise :&nbsp;</label>
+						<input type="text" name="entreprise" placeholder="Entreprise" maxlength="255" required/><br />
 
-                    <form action="#" method="post" id="registration-form">
+						<label for="siret">Numéro de SIRET :&nbsp;</label>
+						<input type="text" name="siret" placeholder="SIRET" maxlength="14" required/><br />
 
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group">
-                                    <label for="nom">Nom</label>
-                                    <input type="text" class="form-control" id="nom" placeholder="Angular" maxlength="255" required>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="form-group">
-                                    <label for="prenom">Prénom</label>
-                                    <input type="text" class="form-control" id="prenom" placeholder="Js" maxlength="255" required>
-                                </div>
-                            </div>
-                        </div>
+						<label for="adresse">Adresse :&nbsp;</label>
+						<input type="text" name="adresse" placeholder="Adresse" maxlength="255" required/><br />
 
-
-
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group">
-                                    <label for="entreprise">Nom de l'entreprise</label>
-                                    <input type="text" class="form-control" id="entreprise" placeholder="AngularJs" maxlength="255" required>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="form-group">
-                                    <label for="siret">Numéro de SIRET</label>
-                                    <input type="text" class="form-control" id="siret" placeholder="156465416532" maxlength="14" required>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group">
-                                    <label for="adresse">Adresse</label>
-                                    <input type="text" class="form-control" id="adresse" placeholder="13 rue du pinguin" maxlength="255" required>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group">
-                                    <label for="ville">Ville</label>
-                                    <input type="text" class="form-control" id="ville" placeholder="Dijon" maxlength="255" required>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="form-group">
-                                    <label for="cp">Code Postal</label>
-                                    <input type="text" class="form-control" id="cp" placeholder="21000" maxlength="5" required>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-
-                        <label for="nom">Nom :&nbsp;</label>
-                        <input type="text" name="nom" placeholder="Nom" maxlength="255" required /><br />
-
-                        <label for="prenom">Prénom :&nbsp;</label>
-                        <input type="text" name="prenom" placeholder="Prénom" maxlength="255" required /><br />
-
-                        <label for="entreprise">Nom de l'entreprise :&nbsp;</label>
-                        <input type="text" name="entreprise" placeholder="Entreprise" maxlength="255" required /><br />
-
-                        <label for="siret">Numéro de SIRET :&nbsp;</label>
-                        <input type="text" name="siret" placeholder="SIRET" maxlength="14" required /><br />
-
-                        <label for="adresse">Adresse :&nbsp;</label>
-                        <input type="text" name="adresse" placeholder="Adresse" maxlength="255" required /><br />
-
-                        <label for="cp">Code Postal :&nbsp;</label>
-                        <input type="text" name="cp" placeholder="CP" maxlength="5" required /><br />
+						<label for="cp">Code Postal :&nbsp;</label>
+						<input type="text" name="cp" placeholder="CP" maxlength="5" required/><br />
 
                         <label for="ville">Ville :&nbsp;</label>
                         <input type="text" name="ville" id="ville" placeholder="Ville" maxlength="255" required /><br />
 
-                        <label for="email">Adresse Mail :&nbsp;</label>
-                        <input type="email" name="email" placeholder="mail@example.tld" maxlength="255" required /><br />
+						<label for="email">Adresse Mail :&nbsp;</label>
+						<input type="email" name="email" placeholder="mail@example.tld" maxlength="255" required/><br />
 
-                        <label for="tel">Numéro Téléphone :&nbsp;</label>
-                        <input type="tel" name="tel" placeholder="Numéro sans espace" size="17" maxlength="10" required /><br />
+						<label for="tel">Numéro Téléphone :&nbsp;</label>
+						<input type="tel" name="tel" placeholder="Numéro sans espace" size="17" maxlength="10" required/><br />
 
-                        <label for="mdp">Mot de Passe :&nbsp;</label>
-                        <input type="password" name="mdp" placeholder="Mot de passe" maxlength="255" required /><br />
+						<label for="mdp">Mot de Passe :&nbsp;</label>
+						<input type="password" name="mdp" placeholder="Mot de passe" maxlength="255"  required/><br />
 
-                        <label for="c_mdp">Confirmation :&nbsp;</label>
-                        <input type="password" name="c_mdp" placeholder="Mot de passe" maxlength="255" required /><br />
+						<label for="c_mdp">Confirmation :&nbsp;</label>
+						<input type="password" name="c_mdp" placeholder="Mot de passe" maxlength="255"  required/><br />
 
-                        <input type="submit" value="Envoyer" />
-                    </form>
+						<input type="submit" value="Envoyer" />
+					</form>
                 </div>
             </div>
         </section>
@@ -244,7 +194,6 @@
 
     <script>
         AOS.init();
-
     </script>
 
 </body>
