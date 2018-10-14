@@ -22,7 +22,16 @@
                     <p class="text-center">Plus de 50 références de l'immobilier professionnel</p>
                 </div>
             </div>
+
         </section>
+
+        <div class="row annonce">
+            <div class="col-4" style="background-image:url('media/image/partenaires.jpg');background-repeat:no-repeat;background-size:cover;background-position:center;"></div>
+            <div class="col pt-2 ml-1">
+                <h1 class="mb-2">Nom entreprise partenaire</h1>
+                <h2 class="mb-0"><i class="material-icons">place</i> Adresse entreprise, code postal, ville</h2>
+            </div>
+        </div>
 
         <ssection>
         
@@ -35,14 +44,7 @@
         
     </div>
 
-    <div class="row annonce">
-            <div class="col-4" style="background-image:url('media/image/partenaires.jpg');background-repeat:no-repeat;background-size:cover;background-position:center;"></div>
-            <div class="col pt-2 ml-1">
-                <h1 class="mb-2">Nom entreprise partenaire</h1>
-                <h2 class="mb-0"><i class="material-icons">place</i> Adresse entreprise, code postal, ville</h2>
-            </div>
-        </div>
-
+    
 
 
 
