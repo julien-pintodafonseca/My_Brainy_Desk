@@ -9,10 +9,6 @@
 <body>
     <?php include("components/header.php"); ?>
 
-
-
-
-
     <div class="container">
 
         <section>
@@ -34,7 +30,7 @@
                     <p>
                         Vous êtes un entrepreneur indépendant ou une jeune startup qui ne dispose pas des moyens d'investir un bureau ? Retrouvez ponctuellement un environnement de travail inspirant et pensé pour l'échange à l'aide de MBDesk et augmentez votre productivité de manière exponentielle.
                     </p>
-                    <a class="highlight" href="#">Créer un compte utilisateur</a>
+                    <a class="highlight" href="registration.php">Créer un compte utilisateur</a>
                 </div>
             </div>
         </section>
@@ -50,14 +46,9 @@
             </div>
         </section>
 
-
         <?php include("components/footer.php") ?>
 
     </div>
-
-
-
-
 
     <script src="lib/jquery/jquery-3.3.1.min.js"></script>
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
@@ -66,12 +57,8 @@
 
     <script>
         AOS.init();
-
     </script>
 
 </body>
 
-
-
 </html>
-px;
