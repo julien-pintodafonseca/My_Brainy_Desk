@@ -15,22 +15,20 @@ require_once('components/class/database.php');
 
     <div class="container">
 
-        <section>
+        <section class="mb-5">
             <div class="row">
                 <div class="col">
-                    <h1>Bienvenue sur <span>MBDesk</span></h1>
-                    <p class="text-center">La plateforme de location d'espaces professionnels</p>
+                    <h1>Formulaire d'inscription</h1>
+                    <p class="text-center">Créez votre compte MBDesk</p>
                 </div>
             </div>
         </section>
-		
+
         <section>
             <div class="row">
                 <div class="col">
-                    <h2 class="text-center mb-2">Formulaire d'inscription</h2>
-					<br />
-					<p style="color:red">
-					<?php
+                    <p style="color:red">
+                        <?php
 						$formExist = isset($_POST['nom'])
 							&& isset($_POST['prenom'])
 							&& isset($_POST['entreprise'])
@@ -137,54 +135,44 @@ require_once('components/class/database.php');
 							}
 						}
 					?>
-					</p>
-					<form action="#" method="post" id="registration-form">
-                        
-                        
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group">
-                                    <label for="nom">Nom</label>
-                                    <input type="text" class="form-control" id="nom" placeholder="Angular" maxlength="255" required>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="form-group">
-                                    <label for="prenom">Prénom</label>
-                                    <input type="text" class="form-control" id="prenom" placeholder="Js" maxlength="255" required>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="form-group">
-                                    <label for="tel">Numéro Téléphone</label>
-                                    <input type="tel" class="form-control" name="tel" placeholder="Numéro sans espace" size="17" maxlength="10" required>
-                                </div>
-                            </div>
-                        </div>
+                    </p>
+                </div>
+            </div>
 
-
+            <div class="row">
+                <div class="col">
+                    <form action="" method="post" id="registration-form">
 
                         <div class="row">
-                            <div class="col">
-                                <div class="form-group">
-                                    <label for="entreprise">Nom de l'entreprise</label>
-                                    <input type="text" class="form-control" id="entreprise" placeholder="AngularJs" maxlength="255" required>
-                                </div>
+                            <div class="col form-group">
+                                <label for="nom">Nom</label>
+                                <input type="text" class="form-control" id="nom" placeholder="Angular" maxlength="255" required />
                             </div>
-                            <div class="col">
-                                <div class="form-group">
-                                    <label for="siret">Numéro de SIRET</label>
-                                    <input type="text" class="form-control" id="siret" placeholder="156465416532" maxlength="14" required>
-                                </div>
+                            <div class="col form-group">
+                                <label for="prenom">Prénom</label>
+                                <input type="text" class="form-control" id="prenom" placeholder="Js" maxlength="255" required />
+                            </div>
+                            <div class="col form-group">
+                                <label for="tel">Numéro Téléphone</label>
+                                <input type="tel" class="form-control" name="tel" placeholder="Numéro sans espace" maxlength="10" required />
                             </div>
                         </div>
 
                         <div class="row">
-                            <div class="col">
-                                <div class="form-group">
-                                    <label for="adresse">Adresse</label>
-                                    <input type="text" class="form-control" id="adresse" placeholder="13 rue du pinguin" maxlength="255" required>
-                                </div>
+                            <div class="col form-group">
+                                <label for="entreprise">Nom de l'entreprise</label>
+                                <input type="text" class="form-control" id="entreprise" placeholder="AngularJs" maxlength="255" required />
+                            </div>
+                            <div class="col form-group">
+                                <label for="siret">Numéro de SIRET</label>
+                                <input type="text" class="form-control" id="siret" placeholder="156465416532" maxlength="14" required />
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col form-group">
+                                <label for="adresse">Adresse</label>
+                                <input type="text" class="form-control" id="adresse" placeholder="13 rue du pinguin" maxlength="255" required />
                             </div>
                         </div>
 
@@ -192,44 +180,38 @@ require_once('components/class/database.php');
                             <div class="col">
                                 <div class="form-group">
                                     <label for="ville">Ville</label>
-                                    <input type="text" class="form-control" id="ville" placeholder="Dijon" maxlength="255" required>
+                                    <input type="text" class="form-control" id="ville" placeholder="Dijon" maxlength="255" required />
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="form-group">
                                     <label for="cp">Code Postal</label>
-                                    <input type="text" class="form-control" id="cp" placeholder="21000" maxlength="5" required>
+                                    <input type="text" class="form-control" id="cp" placeholder="21000" maxlength="5" required />
                                 </div>
                             </div>
                         </div>
 
                         <div class="row">
-                            <div class="col">
-                                <div class="form-group">
-                                    <label for="email">Adresse Mail</label>
-                                    <input type="email" class="form-control" name="email" placeholder="mail@example.tld" maxlength="255" required>
-                                </div>
+                            <div class="col form-group">
+                                <label for="email">Adresse Mail</label>
+                                <input type="email" class="form-control" name="email" placeholder="mail@example.tld" maxlength="255" required />
                             </div>
                         </div>
 
 
                         <div class="row">
-                            <div class="col">
-                                <div class="form-group">
-                                    <label for="mdp">Mot de Passe</label>
-                                    <input type="password" class="form-control" name="mdp" placeholder="Mot de passe" maxlength="255" required>
-                                </div>
+                            <div class="col form-group">
+                                <label for="mdp">Mot de Passe</label>
+                                <input type="password" class="form-control" name="mdp" placeholder="Mot de passe" maxlength="255" required />
                             </div>
-                            <div class="col">
-                                <div class="form-group">
-                                    <label for="c_mdp">Confirmation</label>
-                                    <input type="password" class="form-control" name="c_mdp" placeholder="Mot de passe" maxlength="255" required>
-                                </div>
+                            <div class="col form-group">
+                                <label for="c_mdp">Confirmation</label>
+                                <input type="password" class="form-control" name="c_mdp" placeholder="Mot de passe" maxlength="255" required />
                             </div>
                         </div>
-                        
-                        <button type="submit" class="btn btn-primary">Envoyer</button>
-					</form>
+
+                        <button type="submit" class="btn btn-primary" value="Envoyer">Envoyer</button>
+                    </form>
                 </div>
             </div>
         </section>
@@ -245,6 +227,7 @@ require_once('components/class/database.php');
 
     <script>
         AOS.init();
+
     </script>
 
 </body>

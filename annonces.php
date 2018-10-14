@@ -17,7 +17,7 @@
         </section>
         
         <section>
-            <h2>Filtrer</h2>
+            <h2>Filtrer les annonces</h2>
 
             <form>
                 <div class="row">
@@ -54,7 +54,6 @@
                                 <option>50€/h</option>
                                 <option>100€/h</option>
                                 <option>250€/h</option>
-                                <option>500€/h</option>
                             </select>
                         </div>
                     </div>
