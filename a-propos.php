@@ -33,12 +33,6 @@
                     <p>
                     Suspendisse ac nulla aliquam mauris malesuada sollicitudin. Donec at consequat ex. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam lobortis porta nibh vitae volutpat. Nulla facilisi. Sed luctus magna sit amet efficitur gravida. Morbi in tristique lectus. Fusce imperdiet a nisl nec efficitur. Phasellus commodo tincidunt eros nec molestie. Aliquam congue at velit vitae consequat. Sed at quam nulla. Suspendisse aliquam elit eget odio consequat, eu cursus sem lacinia. Nam nec neque lacus.
                     </p>
-                    <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi a metus lectus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean tincidunt massa sagittis enim vulputate, sit amet sodales eros eleifend. Quisque et elit enim. Phasellus lacinia turpis eget dui congue cursus. Aliquam dictum convallis nunc. Donec eget est at magna congue eleifend id vel ex.
-                    </p>
-                    <p>
-                    Le 1er octobre 1988 naît Aerovías de México, S.A. de C.V, qui conserve le nom de marque Aeroméxico et l'emblème du Caballero Águila.
-                    </p>
                 </div>
             </div>
         </section>
