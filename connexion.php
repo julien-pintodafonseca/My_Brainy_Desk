@@ -69,7 +69,7 @@ if(isset($_SESSION['id']))
                             <input type="email" class="form-control" id="email" name="email" placeholder="utilisateur@adresse.com" autofocus required />
                         </div>
                         <div class="form-group">
-                            <label for="motdepasse"><i class="material-icons">security</i> Mot de passe</label>
+                            <label for="motdepasse"><i class="material-icons">security</i> mot de passe</label>
                             <input type="password" class="form-control" id="password" name="password" placeholder="Mot de passe" required />
                         </div>
                         <button type="submit" class="btn btn-primary">Envoyer</button>

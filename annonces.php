@@ -69,7 +69,7 @@
                 </form>
             </div>
             
-            <h2>Résultat de la recherche</h2>
+            <h2 class="mt-3 mb-3">Résultat de la recherche</h2>
             
             
 
@@ -193,7 +193,7 @@
             $details = $row['details'];
         ?>
         
-        <div class="row mt-4 mb-5annonce">
+        <div class="row mt-4 mb-5 annonce">
             <div class="col-4" style="background-image:url('media/image/office.jpg');background-repeat:no-repeat;background-size:cover;background-position:center;"></div>
             <div class="col pt-2 ml-1">
                 <h1 class="mb-2">
