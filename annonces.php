@@ -54,9 +54,31 @@
         </select>
 
         <br />
-        
-        <input class="form-group" type="text" id="code_postal" maxlength="5" placeholder="ex: 89000">
+
         <label for="code_postal">Code Postal</label>
+        <input class="form-group" type="text" id="code_postal" maxlength="5" placeholder="ex: 89000">
+
+         <br />
+        
+        <label for="tarif_min">Tarif horaire minimal :&nbsp</label>
+        <select id="tarif_min" class="form-control">        
+            <option>tarif_1</option>
+            <option>tarif_2</option>
+            <option>tarif_3</option>
+            <option>tarif_4</option>
+            <option>tarif_5</option>
+        </select>
+        
+        <label for="tarif_max">Tarif horaire maximum :&nbsp</label>
+        <select id="tarif_max" class="form-control">        
+            <option>tarif_1</option>
+            <option>tarif_2</option>
+            <option>tarif_3</option>
+            <option>tarif_4</option>
+            <option>tarif_5</option>
+        </select>
+
+        
         <br />
 
 
