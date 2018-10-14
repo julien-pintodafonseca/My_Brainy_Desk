@@ -16,6 +16,7 @@
             <div class="row">
                 <div class="col">
                     <h1>Contactez-nous</h1>
+					<p style="text-align:center"><a href="mailto:san@antonio.net">san@antonio.net</a></p>
                 </div>
             </div>
         </section>
