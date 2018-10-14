@@ -44,6 +44,8 @@
 
         <br />
 
+        <!-- récupérer les villes de la bd-->
+
         <label for="ville">Ville :&nbsp</label>
         <select id="ville" class="form-control">        
             <option>ville1</option>
@@ -59,7 +61,9 @@
         <input class="form-group" type="text" id="code_postal" maxlength="5" placeholder="ex: 89000">
 
          <br />
-        
+
+        <!-- récupérer les différents tarifs de la bd-->
+
         <label for="tarif_min">Tarif horaire minimal :&nbsp</label>
         <select id="tarif_min" class="form-control">        
             <option>tarif_1</option>
@@ -68,7 +72,9 @@
             <option>tarif_4</option>
             <option>tarif_5</option>
         </select>
-        
+
+        <!-- penser à faire en sorte de n'afficher que les tarifs supérieurs au tarif minimal choisi-->
+
         <label for="tarif_max">Tarif horaire maximum :&nbsp</label>
         <select id="tarif_max" class="form-control">        
             <option>tarif_1</option>
@@ -100,10 +106,10 @@
         </div>
         
         
-        
+
         
         <?php require("config/database.php");
-        
+
         // AJOUTER LA/LES PHOTOS !!!!!!!!
         // + récupérer ordre : DESC/ASC ?
 
@@ -142,16 +148,9 @@
         ?>
 
 
-
-
-
-
         <?php include("components/footer.php") ?>
 
     </div>
-
-
-
 
 
     <script src="lib/jquery/jquery-3.3.1.min.js"></script>
@@ -165,7 +164,5 @@
     </script>
 
 </body>
-
-
 
 </html>
