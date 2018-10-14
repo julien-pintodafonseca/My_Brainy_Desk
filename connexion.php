@@ -1,6 +1,6 @@
+<?php session_start(); ?>
 <?php
 require_once('components/class/database.php');
-session_start();
 if(!isset($_SESSION['id']) && isset($_POST['email']) && isset($_POST['password']))
 {
     $bdd = Database::bdd();
