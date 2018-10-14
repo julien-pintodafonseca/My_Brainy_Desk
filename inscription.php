@@ -40,7 +40,7 @@ require_once('components/class/database.php');
 							&& isset($_POST['mdp'])
 							&& isset($_POST['c_mdp'])
                             && isset($_POST['ville']);
-
+                        
 						if ($formExist) {
 							$valid = true;
 
@@ -57,27 +57,51 @@ require_once('components/class/database.php');
 								&& strlen($_POST['ville']) <= 255;
 
 							if (!$formIsOk) {
-								echo("Les informations saisies ne sont pas correctes !<br />");
+                                    echo('
+                                    <div class="alert alert-danger" role="alert">
+                                        Les informations saisies ne sont pas correctes !
+                                    </div>
+                                    ');                                  
 								$valid = false;
 							} else {
 								if (strlen($_POST['siret']) != 14) {
-									echo("Le numéro de SIRET doit contenir 14 chiffres !<br />");
+                                    echo('
+                                    <div class="alert alert-danger" role="alert">
+                                        Le numéro de SIRET doit contenir 14 chiffres !
+                                    </div>
+                                    ');                                    
 									$valid = false;
 								}
 								if (strlen($_POST['cp']) != 5) {
-									echo("Le code postal doit contenir 5 chiffres !<br />");
+                                    echo('
+                                    <div class="alert alert-danger" role="alert">
+                                        Le code postal doit contenir 5 chiffres !
+                                    </div>
+                                    ');                                    
 									$valid = false;
 								}
 								if (!strpos($_POST['email'], '@') && !strpos($_POST['email'], '.') || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-									echo("L'adresse email est incorrecte !<br />");
+                                    echo('
+                                    <div class="alert alert-danger" role="alert">
+                                        L\'adresse email est incorrecte !
+                                    </div>
+                                    ');                                    
 									$valid = false;
 								}
 								if (strlen($_POST['tel']) != 10) {
-									echo("Le numéro de téléphone est incorrect !<br />");
+                                    echo('
+                                    <div class="alert alert-danger" role="alert">
+                                        Le numéro de téléphone est incorrect !
+                                    </div>
+                                    ');                                    
 									$valid = false;
 								}
 								if ($_POST['mdp'] != $_POST['c_mdp']) {
-									echo("Les deux mot de passes ne sont pas identiques !<br />");
+                                    echo('
+                                    <div class="alert alert-danger" role="alert">
+                                        Les deux mot de passes ne sont pas identiques !
+                                    </div>
+                                    ');                                    
 									$valid = false;
 								}
 
@@ -87,7 +111,11 @@ require_once('components/class/database.php');
 								$reqVerifMail->execute(array("email" => $_POST['email']));
 								$nombre = $reqVerifMail->fetch()['nombre'];
 								if($nombre) {
-                                    echo("Un utilisateur existe déjà avec cette adresse mail.<br />");
+                                    echo('
+                                    <div class="alert alert-danger" role="alert">
+                                        Un utilisateur existe déjà avec cette adresse mail.
+                                    </div>
+                                    ');
                                     $valid = false;
                                 }
 								
@@ -95,7 +123,11 @@ require_once('components/class/database.php');
 								$reqVerifSiret->execute(array("siret" => $_POST['siret']));
 								$nombre = $reqVerifSiret->fetch()['nombre'];
 								if($nombre) {
-								    echo "Un utilisateur existe déjà avec ce numéro SIRET.<br />";
+								    echo('
+                                    <div class="alert alert-danger" role="alert">
+                                        Un utilisateur existe déjà avec ce numéro SIRET.
+                                    </div>
+                                    ');
 								    $valid = false;
                                 }
 							}
@@ -127,7 +159,11 @@ require_once('components/class/database.php');
                                 ));
 
 								if($requete) {
-                                    echo("<span style=\"color:green\">Inscription validée avec succès !</span>");
+                                    echo('
+                                    <div class="alert alert-success" role="alert">
+                                        <p>Inscription validée avec succès !</p>
+                                    </div>
+                                    ');
                                 }
                                 else {
                                     echo("Une erreur est survenue lors de l'inscription. Merci de prévenir l'administrateur.");
@@ -147,33 +183,33 @@ require_once('components/class/database.php');
                         <div class="row">
                             <div class="col form-group">
                                 <label for="nom">Nom</label>
-                                <input type="text" class="form-control" id="nom" placeholder="Angular" maxlength="255" required />
+                                <input type="text" class="form-control" id="nom" name="nom" placeholder="Angular" maxlength="255" required />
                             </div>
                             <div class="col form-group">
                                 <label for="prenom">Prénom</label>
-                                <input type="text" class="form-control" id="prenom" placeholder="Js" maxlength="255" required />
+                                <input type="text" class="form-control" id="prenom" name="prenom" placeholder="Js" maxlength="255" required />
                             </div>
                             <div class="col form-group">
                                 <label for="tel">Numéro Téléphone</label>
-                                <input type="tel" class="form-control" name="tel" placeholder="Numéro sans espace" maxlength="10" required />
+                                <input type="tel" class="form-control" id="tel" name="tel" placeholder="Numéro sans espace" maxlength="10" required />
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col form-group">
                                 <label for="entreprise">Nom de l'entreprise</label>
-                                <input type="text" class="form-control" id="entreprise" placeholder="AngularJs" maxlength="255" required />
+                                <input type="text" class="form-control" id="entreprise" name="entreprise" placeholder="AngularJs" maxlength="255" required />
                             </div>
                             <div class="col form-group">
                                 <label for="siret">Numéro de SIRET</label>
-                                <input type="text" class="form-control" id="siret" placeholder="156465416532" maxlength="14" required />
+                                <input type="text" class="form-control" id="siret" name="siret" placeholder="156465416532" maxlength="14" required />
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col form-group">
                                 <label for="adresse">Adresse</label>
-                                <input type="text" class="form-control" id="adresse" placeholder="13 rue du pinguin" maxlength="255" required />
+                                <input type="text" class="form-control" id="adresse" name="adresse" placeholder="13 rue du pinguin" maxlength="255" required />
                             </div>
                         </div>
 
@@ -181,13 +217,13 @@ require_once('components/class/database.php');
                             <div class="col">
                                 <div class="form-group">
                                     <label for="ville">Ville</label>
-                                    <input type="text" class="form-control" id="ville" placeholder="Dijon" maxlength="255" required />
+                                    <input type="text" class="form-control" id="ville" name="ville" placeholder="Dijon" maxlength="255" required />
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="form-group">
                                     <label for="cp">Code Postal</label>
-                                    <input type="text" class="form-control" id="cp" placeholder="21000" maxlength="5" required />
+                                    <input type="text" class="form-control" id="cp" name="cp" placeholder="21000" maxlength="5" required />
                                 </div>
                             </div>
                         </div>
@@ -195,18 +231,18 @@ require_once('components/class/database.php');
                         <div class="row">
                             <div class="col form-group">
                                 <label for="email">Adresse Mail</label>
-                                <input type="email" class="form-control" name="email" placeholder="mail@example.tld" maxlength="255" required />
+                                <input type="email" class="form-control" id="email" name="email" placeholder="mail@example.tld" maxlength="255" required />
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col form-group">
                                 <label for="mdp">Mot de Passe</label>
-                                <input type="password" class="form-control" name="mdp" placeholder="Mot de passe" maxlength="255" required />
+                                <input type="password" class="form-control" id="mdp" name="mdp" placeholder="Mot de passe" maxlength="255" required />
                             </div>
                             <div class="col form-group">
                                 <label for="c_mdp">Confirmation</label>
-                                <input type="password" class="form-control" name="c_mdp" placeholder="Mot de passe" maxlength="255" required />
+                                <input type="password" class="form-control" id="c_mdp" name="c_mdp" placeholder="Mot de passe" maxlength="255" required />
                             </div>
                         </div>
 
