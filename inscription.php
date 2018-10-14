@@ -134,6 +134,7 @@ require_once('components/class/database.php');
                                 }
 							}
 						}
+                        
 					?>
                     </p>
                 </div>
