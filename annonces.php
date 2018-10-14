@@ -48,11 +48,11 @@
 
         <label for="ville">Ville :&nbsp</label>
         <select id="ville" class="form-control">        
-            <option>ville1</option>
-            <option>ville2</option>
-            <option>ville3</option>
-            <option>ville4</option>
-            <option>ville5</option>
+            <option>ville_1</option>
+            <option>ville_2</option>
+            <option>ville_3</option>
+            <option>ville_4</option>
+            <option>ville_5</option>
         </select>
 
         <br />
