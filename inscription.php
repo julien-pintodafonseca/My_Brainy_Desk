@@ -11,22 +11,22 @@
 
     <div class="container">
 
-        <section>
+        <section class="mb-5">
             <div class="row">
                 <div class="col">
-                    <h1>Bienvenue sur <span>MBDesk</span></h1>
-                    <p class="text-center">La plateforme de location d'espaces professionnels</p>
+                    <h1>Inscription</h1>
+                    <p class="text-center">Créez votre compte MBDesk</p>
                 </div>
             </div>
         </section>
-		
+
         <section>
             <div class="row">
                 <div class="col">
                     <h2 class="text-center mb-2">Formulaire d'inscription</h2>
-					<br />
-					<p style="color:red">
-					<?php
+                    <br />
+                    <p style="color:red">
+                        <?php
 						include('config.database.php');
 
 						$formExist = isset($_POST['nom'])
@@ -129,43 +129,106 @@
 							}
 						}
 					?>
-					</p>
-					<form action="#" method="post" id="registration-form">
-						<label for="nom">Nom :&nbsp;</label>
-						<input type="text" name="nom" placeholder="Nom" maxlength="255" required/><br />
+                    </p>
 
-						<label for="prenom">Prénom :&nbsp;</label>
-						<input type="text" name="prenom" placeholder="Prénom" maxlength="255" required/><br />
 
-						<label for="entreprise">Nom de l'entreprise :&nbsp;</label>
-						<input type="text" name="entreprise" placeholder="Entreprise" maxlength="255" required/><br />
 
-						<label for="siret">Numéro de SIRET :&nbsp;</label>
-						<input type="text" name="siret" placeholder="SIRET" maxlength="14" required/><br />
+                    <form action="#" method="post" id="registration-form">
 
-						<label for="adresse">Adresse :&nbsp;</label>
-						<input type="text" name="adresse" placeholder="Adresse" maxlength="255" required/><br />
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="nom">Nom</label>
+                                    <input type="text" class="form-control" id="nom" placeholder="Angular" maxlength="255" required>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="prenom">Prénom</label>
+                                    <input type="text" class="form-control" id="prenom" placeholder="Js" maxlength="255" required>
+                                </div>
+                            </div>
+                        </div>
 
-						<label for="cp">Code Postal :&nbsp;</label>
-						<input type="text" name="cp" placeholder="CP" maxlength="5" required/><br />
+
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="entreprise">Nom de l'entreprise</label>
+                                    <input type="text" class="form-control" id="entreprise" placeholder="AngularJs" maxlength="255" required>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="siret">Numéro de SIRET</label>
+                                    <input type="text" class="form-control" id="siret" placeholder="156465416532" maxlength="14" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="adresse">Adresse</label>
+                                    <input type="text" class="form-control" id="adresse" placeholder="13 rue du pinguin" maxlength="255" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="ville">Ville</label>
+                                    <input type="text" class="form-control" id="ville" placeholder="Dijon" maxlength="255" required>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="cp">Code Postal</label>
+                                    <input type="text" class="form-control" id="cp" placeholder="21000" maxlength="5" required>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                        <label for="nom">Nom :&nbsp;</label>
+                        <input type="text" name="nom" placeholder="Nom" maxlength="255" required /><br />
+
+                        <label for="prenom">Prénom :&nbsp;</label>
+                        <input type="text" name="prenom" placeholder="Prénom" maxlength="255" required /><br />
+
+                        <label for="entreprise">Nom de l'entreprise :&nbsp;</label>
+                        <input type="text" name="entreprise" placeholder="Entreprise" maxlength="255" required /><br />
+
+                        <label for="siret">Numéro de SIRET :&nbsp;</label>
+                        <input type="text" name="siret" placeholder="SIRET" maxlength="14" required /><br />
+
+                        <label for="adresse">Adresse :&nbsp;</label>
+                        <input type="text" name="adresse" placeholder="Adresse" maxlength="255" required /><br />
+
+                        <label for="cp">Code Postal :&nbsp;</label>
+                        <input type="text" name="cp" placeholder="CP" maxlength="5" required /><br />
 
                         <label for="ville">Ville :&nbsp;</label>
                         <input type="text" name="ville" id="ville" placeholder="Ville" maxlength="255" required /><br />
 
-						<label for="email">Adresse Mail :&nbsp;</label>
-						<input type="email" name="email" placeholder="mail@example.tld" maxlength="255" required/><br />
+                        <label for="email">Adresse Mail :&nbsp;</label>
+                        <input type="email" name="email" placeholder="mail@example.tld" maxlength="255" required /><br />
 
-						<label for="tel">Numéro Téléphone :&nbsp;</label>
-						<input type="tel" name="tel" placeholder="Numéro sans espace" size="17" maxlength="10" required/><br />
+                        <label for="tel">Numéro Téléphone :&nbsp;</label>
+                        <input type="tel" name="tel" placeholder="Numéro sans espace" size="17" maxlength="10" required /><br />
 
-						<label for="mdp">Mot de Passe :&nbsp;</label>
-						<input type="password" name="mdp" placeholder="Mot de passe" maxlength="255"  required/><br />
+                        <label for="mdp">Mot de Passe :&nbsp;</label>
+                        <input type="password" name="mdp" placeholder="Mot de passe" maxlength="255" required /><br />
 
-						<label for="c_mdp">Confirmation :&nbsp;</label>
-						<input type="password" name="c_mdp" placeholder="Mot de passe" maxlength="255"  required/><br />
+                        <label for="c_mdp">Confirmation :&nbsp;</label>
+                        <input type="password" name="c_mdp" placeholder="Mot de passe" maxlength="255" required /><br />
 
-						<input type="submit" value="Envoyer" />
-					</form>
+                        <input type="submit" value="Envoyer" />
+                    </form>
                 </div>
             </div>
         </section>
@@ -181,6 +244,7 @@
 
     <script>
         AOS.init();
+
     </script>
 
 </body>
