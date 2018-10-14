@@ -30,7 +30,10 @@
                     <p class="mb-4">
                         Vous êtes un entrepreneur indépendant ou une jeune startup qui ne dispose pas des moyens d'investir dans un bureau ? Retrouvez ponctuellement un environnement de travail inspirant et pensé pour l'échange à l'aide de MBDesk et augmentez votre productivité de manière exponentielle. Réservez dès maintenant.
                     </p>
-                    <a class="highlight" href="inscription.php">Créer un compte utilisateur</a>
+                    <span style="display:inline">
+                        <a class="highlight" href="inscription.php">Créer un compte utilisateur</a>
+                        <a class="highlight" href="annonces.php">Parcourir les annonces</a>
+                    </span>
                 </div>
             </div>
         </section>
@@ -47,6 +50,7 @@
 
     <script>
         AOS.init();
+
     </script>
 
 </body>

@@ -82,6 +82,8 @@ a.highlight {
     padding: 5px 20px 5px 20px;
     color: white !important;
     box-shadow: 0 0 11px rgba(0, 0, 0, .21);
+    margin-left: 10px;
+    margin-right: 10px;
     transition: 0.5s; 
 }
 

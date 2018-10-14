@@ -42,10 +42,7 @@ class Compte extends Identifiable
      * @var int
      */
     private $telephone;
-    /**
-     * @var image
-     * type image.php
-     */
+
     private $logo;
 
 
