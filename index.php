@@ -27,7 +27,7 @@
                 </div>
                 <div class="col">
                     <h2 class="mb-3">Multipliez votre productivité</h2>
-                    <p class="mb-2">
+                    <p class="mb-4">
                         Vous êtes un entrepreneur indépendant ou une jeune startup qui ne dispose pas des moyens d'investir un bureau ? Retrouvez ponctuellement un environnement de travail inspirant et pensé pour l'échange à l'aide de MBDesk et augmentez votre productivité de manière exponentielle.
                     </p>
                     <a class="highlight" href="inscription.php">Créer un compte utilisateur</a>
