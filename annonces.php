@@ -43,8 +43,11 @@
         <label for="25-50">&nbsp 25 à 50 &nbsp</label>
         </div>
 
+        <br />
+
+        
+        <select id="ville" class="form-control">
         <label for="ville">Ville :&nbsp</label>
-        <select id="ville" class="form-control">>
             <option>ville1</option>
             <option>ville2</option>
             <option>ville3</option>
@@ -54,8 +57,9 @@
 
         <br />
 
+        
+        <input class="form-group" type="text" id="code_postal" maxlength="5" placeholder="ex: 89000">
         <label for="code_postal">Code Postal</label>
-        <input type="text" id="code_postal" maxlength="5" placeholder="ex: 89000">
         <br />
 
 
