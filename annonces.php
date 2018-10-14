@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+
 <head>
     <title>MBDesk - Annonces</title>
     <link rel='stylesheet' href='css/style.css'>
@@ -13,87 +14,59 @@
 
         <section>
             <h1>Parcourir les annonces</h1>
-            <h2>Filtrer les annonces</h2>
+        </section>
+        
+        <section>
+            <h2>Filtrer</h2>
+
+            <form>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="ville">Ville</label>
+                            <input type="text" class="form-control" id="ville" placeholder="ex: Dijon">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="code_postal">Code Postal</label>
+                            <input type="text" class="form-control" id="code_postal" placeholder="ex: 21000">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="nombre_de_personne">Capacité</label>
+                            <select id="nombre_de_personne" class="form-control">
+                                <option value="1-10">1 à 10 personnes</option>
+                                <option value="11-25">11 à 25 personnes</option>
+                                <option value="25+">Plus de 25 personnes</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="tarif_max">Prix horaire maximum</label>
+                            <select id="tarif_max" class="form-control">
+                                <option>25€/h</option>
+                                <option>50€/h</option>
+                                <option>100€/h</option>
+                                <option>250€/h</option>
+                                <option>500€/h</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Rechercher</button>
+
+            </form>
         </section>
 
-        <form>
 
-        <div class="form-check form-check-inline">
-        <label for="nombre_de_personne">Nombre de personnes :&nbsp</label>  
-        </div>
 
-        <div class="form-check form-check-inline">
-        <input type="radio" name="nombre_de_personne" value="0-5" id="0-5" /> 
-        <label for="0-5">&nbsp 0 à 5 &nbsp</label>
-        </div>
-
-        <div class="form-check form-check-inline">
-        <input type="radio" name="nombre_de_personne" value="5-10" id="5-10" /> 
-        <label for="5-10">&nbsp 5 à 10 &nbsp</label>
-        </div>
-
-        <div class="form-check form-check-inline">
-        <input type="radio" name="nombre_de_personne" value="10-25" id="10-25" /> 
-        <label for="10-25">&nbsp 10 à 25 &nbsp</label>
-        </div>
-
-        <div class="form-check form-check-inline">
-        <input type="radio" name="nombre_de_personne" value="25-50" id="25-50" /> 
-        <label for="25-50">&nbsp 25 à 50 &nbsp</label>
-        </div>
-
-        <br />
-
-        <!-- récupérer les villes de la bd-->
-
-        <label for="ville">Ville :&nbsp</label>
-        <select id="ville" class="form-control">        
-            <option>ville_1</option>
-            <option>ville_2</option>
-            <option>ville_3</option>
-            <option>ville_4</option>
-            <option>ville_5</option>
-        </select>
-
-        <br />
-
-        <label for="code_postal">Code Postal</label>
-        <input class="form-group" type="text" id="code_postal" maxlength="5" placeholder="ex: 89000">
-
-         <br />
-
-        <!-- récupérer les différents tarifs de la bd-->
-
-        <label for="tarif_min">Tarif horaire minimal :&nbsp</label>
-        <select id="tarif_min" class="form-control">        
-            <option>tarif_1</option>
-            <option>tarif_2</option>
-            <option>tarif_3</option>
-            <option>tarif_4</option>
-            <option>tarif_5</option>
-        </select>
-
-        <!-- penser à faire en sorte de n'afficher que les tarifs supérieurs au tarif minimal choisi-->
-
-        <label for="tarif_max">Tarif horaire maximum :&nbsp</label>
-        <select id="tarif_max" class="form-control">        
-            <option>tarif_1</option>
-            <option>tarif_2</option>
-            <option>tarif_3</option>
-            <option>tarif_4</option>
-            <option>tarif_5</option>
-        </select>
-
-        
-        <br />
-
-        <button type="submit" class="btn btn-primary">Rechercher</button>
-
-        </form>
-
-        <br />
-
-        
         <div class="row annonce">
             <div class="col-4" style="background-image:url('media/image/office.jpg');background-repeat:no-repeat;background-size:cover;background-position:center;"></div>
             <div class="col pt-2 ml-1">
@@ -104,10 +77,10 @@
                 <p>La salle de réunion Angular est située en plein coeur du XIIe arrondissement de Dijon, qui n'existe pas.</p>
             </div>
         </div>
-        
-        
 
-        
+
+
+
         <?php require_once("config/database.php");
 
         // AJOUTER LA/LES PHOTOS !!!!!!!!
@@ -135,11 +108,19 @@
         <div class="row annonce">
             <div class="col-4" style="background-image:url('media/image/office.jpg');background-repeat:no-repeat;background-size:cover;background-position:center;"></div>
             <div class="col pt-2 ml-1">
-                <h1 class="mb-2"><?php echo $titre; ?></h1>
-                <h2 class="mb-0"><i class="material-icons">attach_money</i> <?php echo $prix ?>€/heure</h2>
-                <h2 class="mb-0"><i class="material-icons">place</i> <?php echo $adresse.", ".$codepostal." ".$ville; ?></h2>
-                <h2><i class="material-icons">people</i> <?php echo $capacite; ?> personnes</h2>
-                <p><?php echo $details; ?></p>
+                <h1 class="mb-2">
+                    <?php echo $titre; ?>
+                </h1>
+                <h2 class="mb-0"><i class="material-icons">attach_money</i>
+                    <?php echo $prix ?>€/heure</h2>
+                <h2 class="mb-0"><i class="material-icons">place</i>
+                    <?php echo $adresse.", ".$codepostal." ".$ville; ?>
+                </h2>
+                <h2><i class="material-icons">people</i>
+                    <?php echo $capacite; ?> personnes</h2>
+                <p>
+                    <?php echo $details; ?>
+                </p>
             </div>
         </div>
 
