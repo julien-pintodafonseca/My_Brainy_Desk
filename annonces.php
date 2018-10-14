@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php require_once('components/class/database.php'); ?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -79,8 +79,11 @@
             </div>
         </div>
 
-        <?php require_once("config/database.php");
+        <?php
 
+        $bdd = Database::bdd();
+
+        
         $_ville = NULL;
         if (isset($_POST['ville'])) {
             $_ville = $_POST['ville'];
@@ -112,8 +115,7 @@
         // AJOUTER LA/LES PHOTOS !!!!!!!!
         // + récupérer ordre : DESC/ASC ?
 
-        $BDD = Database::bdd();
-        $query = $BDD->execute('
+        $query = $bdd->query('
         SELECT
             titre, type, adresse, codepostal, ville, details, prix, duree
         FROM
@@ -148,8 +150,6 @@
             $codepostal = $row['codepostal'];
             $ville = $row['ville'];
             $detail = $row['details'];
-
-
         ?>
         
         <div class="row annonce">
@@ -173,7 +173,9 @@
 
         <?php       
         }
-        include("components/footer.php") ?>
+        ?>
+        
+        <?php include("components/footer.php"); ?>
 
     </div>
 

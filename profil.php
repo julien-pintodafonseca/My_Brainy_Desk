@@ -1,4 +1,5 @@
 <?php session_start(); ?>
+<?php require_once('components/class/database.php'); ?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -29,8 +30,8 @@
             <?php
             
             $bdd = Database::bdd();
-            $query = 'SELECT * FROM Utilisateur WHERE Utilisateur.id = '.$_SESSION['id'].';';
-            $result->query($query)->fetchAll();
+            $query = 'SELECT * FROM Utilisateur WHERE id = '.$_SESSION['id'].';';
+            $result = $bdd->query($query)->fetchAll();
             
             
             foreach ($result as $row) {
