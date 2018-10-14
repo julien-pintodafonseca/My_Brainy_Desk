@@ -19,27 +19,32 @@
 
         <form>
 
-        <div>
-        <label for="nombre_de_personne">Nombre de personnes</label>  
-
-        <input type="radio" name="nombre_de_personne" value="0-5" id="0-5" /> 
-        <label for="0-5">0-5</label>
-
-        <input type="radio" name="nombre_de_personne" value="5-10" id="5-10" /> 
-        <label for="5-10">5-10</label>
-
-        <input type="radio" name="nombre_de_personne" value="10-25" id="10-25" /> 
-        <label for="10-25">10-25</label>
-
-        <input type="radio" name="nombre_de_personne" value="25-50" id="25-50" /> 
-        <label for="25-50">25-50</label>
-
+        <div class="form-check form-check-inline">
+        <label for="nombre_de_personne">Nombre de personnes :&nbsp</label>  
         </div>
 
-        <br />
+        <div class="form-check form-check-inline">
+        <input type="radio" name="nombre_de_personne" value="0-5" id="0-5" /> 
+        <label for="0-5">&nbsp 0 à 5 &nbsp</label>
+        </div>
 
-        <label for="ville">Ville</label>
-        <select id="ville">
+        <div class="form-check form-check-inline">
+        <input type="radio" name="nombre_de_personne" value="5-10" id="5-10" /> 
+        <label for="5-10">&nbsp 5 à 10 &nbsp</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+        <input type="radio" name="nombre_de_personne" value="10-25" id="10-25" /> 
+        <label for="10-25">&nbsp 10 à 25 &nbsp</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+        <input type="radio" name="nombre_de_personne" value="25-50" id="25-50" /> 
+        <label for="25-50">&nbsp 25 à 50 &nbsp</label>
+        </div>
+
+        <label for="ville">Ville :&nbsp</label>
+        <select id="ville" class="form-control">>
             <option>ville1</option>
             <option>ville2</option>
             <option>ville3</option>
@@ -54,18 +59,10 @@
         <br />
 
 
-        <button type="submit">Rechercher</button>
+        <button type="submit" class="btn btn-primary">Rechercher</button>
 
         </form>
         <br />
-
-
-        <p>ICI CHAMPS POUR LES FILTRES !!!</p>
-        <p>NB personnes</p>
-        <p>Ville</p>
-        <p>Code postal</p>
-        <p>Prix</p>
-
 
         <form>
             <div class="form-check form-check-inline">
