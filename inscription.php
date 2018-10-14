@@ -54,7 +54,7 @@
 								&& strlen($_POST['entreprise']) <= 255
 								&& strlen($_POST['adresse']) <= 255
 								&& strlen($_POST['email']) <= 255
-                                && strlen($_POST['ville']);
+								&& strlen($_POST['ville']);
 
 							if (!$formIsOk) {
 								echo("Les informations saisies ne sont pas correctes !<br />");
@@ -70,10 +70,6 @@
 								}
 								if (!strpos($_POST['email'], '@') && !strpos($_POST['email'], '.') || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
 									echo("L'adresse email est incorrecte !<br />");
-									$valid = false;
-								}
-								if ($_POST['tel']) {
-									echo("Le numéro de téléphone n'est pas un numéro valide !<br />");
 									$valid = false;
 								}
 								if (strlen($_POST['tel']) != 10) {
@@ -130,7 +126,6 @@
                                 ));
 
 								echo("<span style=\"color:green\">Inscription validée avec succès !</span>");
-								//INSERT SQL infos validées
 							}
 						}
 					?>
