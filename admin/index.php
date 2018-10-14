@@ -5,13 +5,15 @@ require_once "../components/class/database.php";
 <!doctype html>
 <html>
 <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="../favicon.ico" />
     <title>Panneau d'administration</title>
 </head>
 <body>
     <?php
     $success = false;
+    $bdd = Database::bdd();
     if(isset($_POST['email']) && isset($_POST['password'])) {
-        $bdd = Database::bdd();
         $requete = $bdd->prepare('SELECT * FROM Admin WHERE email = :email');
         $requete->execute(array("email" => $_POST['email']));
         if($infos = $requete->fetch()) {
@@ -24,7 +26,7 @@ require_once "../components/class/database.php";
     if(isset($_SESSION['adminlogged']) && $_SESSION['adminlogged']) {
         ?>
         <h1>Bienvenue dans la zone d'administration</h1>
-        <a href="partenaires.php">Voir les partenaires</a>
+        <a href="#">Voir les partenaires</a>
         <h2>Utilisateurs en attente de validation.</h2>
         <table>
             <thead>
