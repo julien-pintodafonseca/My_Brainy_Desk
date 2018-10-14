@@ -25,13 +25,16 @@ if(!isset($_SESSION['id']) && $_SESSION['id']) {
         <section>
             <div class="row">
                 <div class="col">
-                    <h1>Mon profil <?php if($_SESSION['partenaire']) { ?><button class="btn btn-success" onclick="document.location.href='creation-annonces.php'">Poster une annonce</button><?php } ?></h1>
+                    <h1>Mon profil
+                        <?php if($_SESSION['partenaire']) { ?><button class="btn btn-success" onclick="document.location.href='creation-annonces.php'">Poster une annonce</button>
+                        <?php } ?>
+                    </h1>
                 </div>
             </div>
         </section>
 
         <section class="profil">
-            
+
             <?php
             
             $bdd = Database::bdd();
@@ -44,28 +47,39 @@ if(!isset($_SESSION['id']) && $_SESSION['id']) {
                 $prenom = $row['prenom'];
                 $nom = $row['nom'];
                 $email = $row['email'];
-            
+                $adresse = $row['adresse'];                
+                $tel = $row['telephone'];
+
             ?>
-            
-            
-            
+
+
             <div class="row">
                 <div class="col">
-                    <h1><?php echo $prenom . ' ' . $nom; ?></h1>
-                    <h2><?php echo $email; ?></h2>
+                    <h1>
+                        <?php echo $prenom . ' ' . $nom; ?>
+                    </h1>
+                    <h2 class="mb-0">
+                        <i class="material-icons">place</i> <?php echo $adresse; ?>
+                    </h2>                    
+                    <h2 class="mb-0">
+                        <i class="material-icons">alternate_email</i> <?php echo $email; ?>
+                    </h2>
+                    <h2 class="mb-0">
+                        <i class="material-icons">phone</i> <?php echo $tel; ?>
+                    </h2>
                 </div>
             </div>
-        
+
             <?php
             }
             ?>
-            
-            
-            
-            
-            
+
+
+
+
+
         </section>
-        
+
         <?php include("components/footer.php") ?>
 
     </div>
