@@ -6,8 +6,8 @@ X | TERMINE
 ====================
 
 /accueil                	- Page d'accueil du site
-/inscription            	X Formulaire "Création d'un compte utilisateur"
-/connexion              	- Page permettant de se connecter au site
+/inscription <Julien>		X Formulaire "Création d'un compte utilisateur"
+/connexion   <Julien>		- Page permettant de se connecter au site
 
 /annonces			- Consultation des annonces publiées et inactives
     /reserver           	- [utilisateur] Reserver une annonce
