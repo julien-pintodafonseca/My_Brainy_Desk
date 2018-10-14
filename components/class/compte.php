@@ -66,23 +66,5 @@ class Compte extends Identifiable
 
         $this->logo = null;
     }
-
-    public function __construct($_email, $_mdp) {
-        parent::__construct($_email, $_mdp);
-        
-        $this->estConnecte = false;
-        $this->estVerifie  = false;
-
-        $this->nom = "";
-        $this->prenom = "";
-        $this->entreprise = "";
-        $this->numSiret = 0;
-        $this->adresse = "";
-        $this->codePostal = 0;
-        $this->ville = "";
-        $this->telephone = 0;
-
-        $this->logo = null;
-    }
     
 }
