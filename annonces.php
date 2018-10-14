@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -94,7 +95,7 @@
         $_nbPersonnes_min = NULL;
         $_nbPersonnes_max = NULL;
 
-        if (isset($_POST['nombre_de_personne']) {
+        if (isset($_POST['nombre_de_personne'])) {
             if ($_POST['nombre_de_personne'] == "1-10") {
                 $_nbPersonnes_min = 1;
                 $_nbPersonnes_max = 10;
