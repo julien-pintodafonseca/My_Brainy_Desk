@@ -16,7 +16,7 @@
             <div class="row">
                 <div class="col">
                     <h1>Contactez-nous</h1>
-					<p style="text-align:center"><a href="mailto:san@antonio.net">san@antonio.net</a></p>
+					<p style="text-align:center"><a href="mailto:contact@brainytech.fr">contact@brainytech.fr</a></p>
                 </div>
             </div>
         </section>
