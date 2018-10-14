@@ -25,13 +25,38 @@
         </section>
 
         <section class="profil">
+            
+            <?php
+            
+            $bdd = Database::bdd();
+            $query = 'SELECT * FROM Utilisateur WHERE Utilisateur.id = '.$_SESSION['id'].';';
+            $result->query($query)->fetchAll();
+            
+            
+            foreach ($result as $row) {
+                $prenom = $row['prenom'];
+                $nom = $row['nom'];
+                $email = $row['email'];
+            
+            ?>
+            
+            
+            
             <div class="row">
                 <div class="col">
-                    <h1>Prénom nom</h1>
-                    <h2>monmail@lemail.fr</h2>
+                    <h1><?php echo $prenom . ' ' . $nom; ?></h1>
+                    <h2><?php echo $email; ?></h2>
                 </div>
             </div>
         
+            <?php
+            }
+            ?>
+            
+            
+            
+            
+            
         </section>
         
         <?php include("components/footer.php") ?>
