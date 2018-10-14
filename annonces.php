@@ -117,7 +117,14 @@
         // AJOUTER LA/LES PHOTOS !!!!!!!!
         // + récupérer ordre : DESC/ASC ?
 
-        $query = $bdd->query('
+        $query = "SELECT
+            titre, type, adresse, codepostal, ville, details
+        FROM
+            Annonce;";
+        
+    
+        /*
+        $query = '
         SELECT
             titre, type, adresse, codepostal, ville, details, prix, duree
         FROM
@@ -140,18 +147,20 @@
             AND (
                 ('.$_codePostal.' IS NULL)
                 OR (Annonce.codePostal = '.$_codePostal.')
-                );
-        ')->fetchAll(); 
+                );';
+        */
+        
+            $result = $bdd->query($query)->fetchAll();
 
-        foreach ($query as $row) {
+        foreach ($result as $row) {
             $titre = $row['titre'];
-            $type = $row['type'];
+            /*$type = $row['type'];
             $prix = $row['prix'];
             $duree = $row['duree'];
             $adresse = $row['adresse'];
             $codepostal = $row['codepostal'];
             $ville = $row['ville'];
-            $detail = $row['details'];
+            $detail = $row['details'];*/
         ?>
         
         <div class="row annonce">
