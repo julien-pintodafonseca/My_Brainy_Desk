@@ -88,11 +88,11 @@
         
         <br />
 
-
         <button type="submit" class="btn btn-primary">Rechercher</button>
 
         </form>
 
+        <br />
 
         
         <div class="row annonce">
@@ -115,7 +115,7 @@
         // + récupérer ordre : DESC/ASC ?
 
         $query = $BDD->query('
-            SELECT titre, type, adresse, codepostal, ville, detail, prix, duree 
+            SELECT titre, type, adresse, codepostal, ville, details, prix, duree 
             FROM Annonce
             JOIN Annonce_Tarif ON Annonce.id = Annonce_Tarif.Annonceid
             JOIN Tarif ON Annonce_Tarif.Tarifid = Tarif.id;
@@ -130,7 +130,7 @@
             $adresse = $row['adresse'];
             $codepostal = $row['codepostal'];
             $ville = $row['ville'];
-            $detail = $row['detail'];
+            $detail = $row['details'];
         ?>
 
         <div class="row annonce">
@@ -140,7 +140,7 @@
                 <h2 class="mb-0"><i class="material-icons">attach_money</i> <?php echo $prix ?>€/heure</h2>
                 <h2 class="mb-0"><i class="material-icons">place</i> <?php echo $adresse.", ".$codepostal." ".$ville; ?></h2>
                 <h2><i class="material-icons">people</i> <?php echo $capacite; ?> personnes</h2>
-                <p><?php echo $detail; ?></p>
+                <p><?php echo $details; ?></p>
             </div>
         </div>
 
