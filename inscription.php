@@ -249,7 +249,8 @@ if(!isset($_SESSION['id']) || !$_SESSION['id']) {
                             </div>
                         </div>
 
-                        <button type="submit" class="btn btn-primary" value="Envoyer">Envoyer</button>
+                        <button type="submit" class="btn btn-success" value="Envoyer">Envoyer</button>
+                        <button type="reset" class="btn btn-danger">Réinitialiser</button>
                     </form>
                 </div>
             </div>
