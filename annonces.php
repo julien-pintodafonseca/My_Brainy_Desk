@@ -1,4 +1,3 @@
-<?php require_once 'components/class/annonces.php'; ?>
 <?php require_once 'conf/database.php'; ?>
 <!doctype html>
 <html>
