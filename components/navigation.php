@@ -34,15 +34,15 @@
             <?php
             if (isset($_SESSION['id'])) {
                 echo '
-                        <a id="profil" class="highlight" href="profil.php">Mon profil</a>
+                        <a id="profil" class="highlight" href="profil.php"><i class="material-icons">person</i> Mon profil</a>
 
-                        <a id="deconnexion" class="highlight" href="deconnexion.php">Se déconnecter</a>
+                        <a id="deconnexion" class="highlight" href="deconnexion.php"><i class="material-icons">close</i> Se déconnecter</a>
                 ';
             } else {
                 echo '
-                        <a id="connexion" class="highlight" href="connexion.php">Se connecter</a>
+                        <a id="connexion" class="highlight" href="connexion.php"><i class="material-icons">check</i> Se connecter</a>
 
-                        <a id="inscription" class="highlight" href="inscription.php">Créer un compte</a>
+                        <a id="inscription" class="highlight" href="inscription.php"><i class="material-icons">person_add</i> Créer un compte</a>
                 ';                
             }
             
