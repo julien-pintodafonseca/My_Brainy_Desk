@@ -78,7 +78,7 @@ require_once "../components/class/database.php";
     ?>
     <form method="post" action="#">
         <label for="email">Adresse mail : </label>
-        <input type="text" placeholder="mail@example.tld" name="email" id="email" required autofocus /><br />
+        <input type="email" placeholder="mail@example.tld" name="email" id="email" required autofocus /><br />
         <label for="password">Mot de passe : </label>
         <input type="password" placeholder="Mot de passe" name="password" id="password" required  /><br />
         <button type="submit">Connexion</button>
