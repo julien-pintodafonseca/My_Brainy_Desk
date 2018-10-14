@@ -56,7 +56,7 @@ require_once('components/class/database.php');
 								&& strlen($_POST['entreprise']) <= 255
 								&& strlen($_POST['adresse']) <= 255
 								&& strlen($_POST['email']) <= 255
-                                && strlen($_POST['ville']);
+								&& strlen($_POST['ville']) <= 255;
 
 							if (!$formIsOk) {
 								echo("Les informations saisies ne sont pas correctes !<br />");
@@ -72,10 +72,6 @@ require_once('components/class/database.php');
 								}
 								if (!strpos($_POST['email'], '@') && !strpos($_POST['email'], '.') || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
 									echo("L'adresse email est incorrecte !<br />");
-									$valid = false;
-								}
-								if (!$_POST['tel']) {
-									echo("Le numéro de téléphone n'est pas un numéro valide !<br />");
 									$valid = false;
 								}
 								if (strlen($_POST['tel']) != 10) {
@@ -138,7 +134,6 @@ require_once('components/class/database.php');
                                 else {
                                     echo("Une erreur est survenue lors de l'inscription. Merci de prévenir l'administrateur.");
                                 }
-								//INSERT SQL infos validées
 							}
 						}
 					?>
