@@ -90,7 +90,7 @@ require_once('components/class/database.php');
                                     echo("Un utilisateur existe déjà avec cette adresse mail.<br />");
                                     $valid = false;
                                 }
-
+								
                                 $reqVerifSiret = $bdd->prepare('SELECT COUNT(*) nombre FROM Utilisateur WHERE siret = :siret');
 								$reqVerifSiret->execute(array("siret" => $_POST['siret']));
 								$nombre = $reqVerifSiret->fetch()['nombre'];
@@ -199,7 +199,6 @@ require_once('components/class/database.php');
                             </div>
                         </div>
 
-
                         <div class="row">
                             <div class="col form-group">
                                 <label for="mdp">Mot de Passe</label>
@@ -224,12 +223,6 @@ require_once('components/class/database.php');
     <script src="lib/jquery/jquery-3.3.1.min.js"></script>
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
     <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/aos/aos.js"></script>
-
-    <script>
-        AOS.init();
-
-    </script>
 
 </body>
 
