@@ -1,0 +1,76 @@
+LISTE PAGES A CREER 
+====================
+X | TERMINE
+~ | EN COURS
+- | A REALISER
+====================
+
+/accueil                - Page d'accueil du site
+/inscription            X Formulaire "Création d'un compte utilisateur"
+/connexion              - Page permettant de se connecter au site
+
+/annonces				        - Consultation des annonces publiées et inactives
+    /reserver           - [utilisateur] Reserver une annonce
+		/creer			        - [partenaire] Création d'une nouvelle annonce 
+		/gerer			        - [partenaire] Publication ou désactivation d'annonces
+						            - [partenaire] Modification des annonces publicées et inactives avec conservation
+						                           des anciennes version avec date de modification
+						            - [partenaire] Gestion des disponibilités des annonces publiées ou inactives	
+    
+/partenaires			      - Liste des partenaires
+
+/moi[classique]			    - Utilisateur connecté
+	/profil				        - Affichage des informations utilisateur (même page que partenaire)
+						            - Gestion de l'ajout des logos/photos
+	/gestion			        - Tableau de bord de gestion (infos réservations)
+	/reservations		      - Calendrier de réservation
+						            - Consultation des réservations en cours
+						            - Consultation des reservations annulées
+						            - Consultation des réservations validées
+	/reinitialisation	    - Page d'édition / Réinitialisation mdp
+
+	
+/moi[partenaire]		    - Compte partenaire					
+	/profil				        - Affichage des informations utilisateur (même page que utilisateur)
+						            - Gestion de l'ajout des logos/photos
+	/gestion			        - Tableau de bord de gestion (infos annonces/réservations)
+	/reservations		      - Calendrier de réservation	
+						            - Consultation des réservations en cours
+						            - Consultation des reservations annulées
+						            - Consultation des réservations validées
+	/reinitialisation	    - Réinitialisation de mot de passe
+
+	
+/administrateur			    - Page administrateur
+	/gestion			        - Tableau de bord de gestion
+	/calendrier			      - Calendrier de réservation
+		/<nomannonce> ?     - Calendrier spécifique à une annonce
+  /partenaires	  	    - Consultation et gestion des partenaires
+		/nouveau 		        - Creation d'un nouveau partenaire
+	/utilisateurs		      - Consultation et gestion des comptes utilisateur en attente
+                        - Valider le compte d'un utilisateur en attente de validation
+	/reinitialiser 		    - Réinitialisation mot de passe
+
+/apropos				- Informations diverses
+/contact				- Page contact
+
+
+====================
+AUTRES FONCTIONNALITES A PRENDRE EN COMPTE
+
+- Gestion globale des notifications
+
+- Visiteurs
+	- Mise en place des outils de recherche
+  
+===================
+ARBORESCENCE WEWORK
+
+WeWork
+	Accueil
+	Emplacements
+	Espace de travail
+	Notre mission
+	Entreprise
+	Labs
+	Connexion
