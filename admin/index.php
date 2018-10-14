@@ -6,23 +6,29 @@ require_once "../components/class/database.php";
 <html lang="fr">
 <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="../favicon.ico" />
+    <link rel="icon" href="../favicon.png" />
     <title>Panneau d'administration</title>
 </head>
 <body>
     <?php
     $success = false;
     $bdd = Database::bdd();
+
+    // On vérifie si l'utilisateur a saisi des choses dans le formulaire.
     if(isset($_POST['email']) && isset($_POST['password'])) {
         $requete = $bdd->prepare('SELECT * FROM Admin WHERE email = :email');
         $requete->execute(array("email" => $_POST['email']));
+        // On récupère les infos de l'admin pour vérifier le mot de passe.
         if($infos = $requete->fetch()) {
+            // On vérifie que le mot de passe soit bon
             if(password_verify($_POST['password'], $infos)) {
+                // Si c'est le cas, on met les infos dans la session pour connecter l'user.
                 $_SESSION['adminlogged'] = true;
                 $success = true;
             }
         }
     }
+    // On vérifie si l'administrateur est connecté, ou s'il doit aller sur le formulaire de connexion.
     if(isset($_SESSION['adminlogged']) && $_SESSION['adminlogged']) {
         ?>
         <h1>Bienvenue dans la zone d'administration</h1>
@@ -46,6 +52,7 @@ require_once "../components/class/database.php";
             </thead>
             <tbody>
             <?php
+            // Ligne après ligne, on affiche les utilisateurs qui ne sont pas vérifiés.
             $requete = $bdd->query('SELECT * FROM Utilisateur WHERE verifie = 0;');
             while($infos = $requete->fetch()) {
                 echo '<tr>
@@ -68,15 +75,18 @@ require_once "../components/class/database.php";
         </table>
         <?php
     }
+    // L'utilisateur n'est pas connecté. On l'invite donc à se connecter pour accéder aux fonctions d'admin.
     else {
     ?>
     <h1>Connectez-vous pour accéder à la zone d'administration.</h1>
     <?php
+        // Permet d'afficher un message si les identifiants sont incorrects.
         if(!$success) {
     ?>
     <div style="color: #FFFFFF;">Les identifiants de connexion sont incorrects.</div>
     <?php
         }
+        // Formulaire de connexion.
     ?>
     <form method="post" action="#">
         <label for="email">Adresse mail : </label>
