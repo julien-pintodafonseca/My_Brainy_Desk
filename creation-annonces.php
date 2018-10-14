@@ -21,22 +21,24 @@
                 </div>
             </div>
         </section>
+        <section>
+            <div class="row">
+                <div class="col">
+                    <form action="" method="post" id="annonce-form">
 
-         <div class="row">
-            <div class="col">
-                <form action="" method="post" id="annonce-form">
+                    <!-- ajouter photo -->
 
-                    <div class="row">
-                    <label for="titre">Titre</label>
-                    <input type="text" class="form-control" name="titre" id="titre" placeholder="Titre" maxlength="50" required />
-                    </div>
+                        <div class="row">
+                            <label for="titre">Titre</label>
+                            <input type="text" class="form-control" name="titre" id="titre" placeholder="Titre" maxlength="50" required />
+                        </div>
 
-                    <div class="row">
-                    <label for="description">Description</label>
-                    <input type="text" class="form-control" name="titre" id="descrition" placeholder="Description" maxlength="255" required />
-                    </div>
+                        <div class="row">
+                            <label for="description">Description</label>
+                            <input type="text" class="form-control" name="titre" id="descrition" placeholder="Description" maxlength="255" required />
+                        </div>
 
-                    <div class="row">
+                        <div class="row">
                             <div class="col form-group">
                                 <label for="adresse">Adresse</label>
                                 <input type="text" class="form-control" id="adresse" name="adresse" placeholder="13 rue du pinguin" maxlength="255" required />
@@ -56,11 +58,23 @@
                                     <input type="text" class="form-control" id="cp" name="cp" placeholder="21000" maxlength="5" required />
                                 </div>
                             </div>
-                    </div>
+                        </div>
 
-                </form>
+                        <div>
+
+                            <label for="type">Type de location</label>
+                            <select id="type" class="form-control">
+                                <option>Bureau</option>
+                                <option>Espace de Co-working</option>
+                                <option>Salle de réunion</option>
+                                <option>Salle de formation</option>
+                            </select>
+
+                        </div>
+                    </form>
+                </div>
             </div>
-        </div>
+        </section>
 
 
     <?php include("components/footer.php") ?>
