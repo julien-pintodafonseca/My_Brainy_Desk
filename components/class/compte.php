@@ -63,5 +63,21 @@ class Compte extends Identifiable
 
         $this->logo = null;
     }
+
+    public function estConnecte() {
+        return $this->estConnecte;
+    }
+
+    public function setConnecte($bool) {
+        $this->estConnecte = $bool;
+    }
+
+    public function estVerifie() {
+        return $this->estVerifie;
+    }
+
+    public function setVerifie($bool) {
+        $this->estVerifie = $bool;
+    }
     
 }
