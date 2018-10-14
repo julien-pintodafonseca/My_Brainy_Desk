@@ -74,6 +74,7 @@ require_once('components/class/database.php');
                             </select>
 
                         </div>
+                        <button type="submit" class="btn btn-primary" value="Confirmer"></button>
                     </form>
                 </div>
             </div>
@@ -82,7 +83,7 @@ require_once('components/class/database.php');
 
     <?php include("components/footer.php") ?>
     </div>
-    
+
     <script src="lib/jquery/jquery-3.3.1.min.js"></script>
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
     <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
