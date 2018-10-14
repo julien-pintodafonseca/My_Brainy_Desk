@@ -27,7 +27,7 @@
         <section>
             <div class="row" style="align-items:center;">
                 <div class="col-5 text-center">
-                    <img src="media/image/accueil/environnement.jpg" alt="" style="max-height:600px;width:auto;">
+                    <img src="media/image/accueil/environnement.jpg" alt="Environnement de travail" style="max-height:600px;width:auto;">
                 </div>
                 <div class="col">
                     <h2 class="mb-3">Multipliez votre productivité</h2>
