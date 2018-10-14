@@ -1,4 +1,3 @@
-<?php require_once 'conf/database.php'; ?>
 <!doctype html>
 <html>
 <head>
@@ -109,7 +108,7 @@
         
 
         
-        <?php require("config/database.php");
+        <?php require_once("config/database.php");
 
         // AJOUTER LA/LES PHOTOS !!!!!!!!
         // + récupérer ordre : DESC/ASC ?
