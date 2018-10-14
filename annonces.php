@@ -8,8 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>MBDesk - Annonces</title>
-    <link rel='stylesheet' href='css/style.css'>
-    <link rel="icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel='stylesheet' href='css/style.css' />
 </head>
 
 <body>
@@ -116,11 +116,12 @@
         // AJOUTER LA/LES PHOTOS !!!!!!!!
         // + récupérer ordre : DESC/ASC ?
 
+        /*
         $query = "SELECT
             titre, type, adresse, codepostal, ville, details
         FROM
             Annonce;";
-        
+        */
     
         /*
         $query = '
@@ -140,26 +141,52 @@
                 OR (Annonce.capacite <= '.$_nbPersonnes_max.')
                 )
             AND (
-                ('.$_ville.' IS NULL)
-                OR (Annonce.ville = '.$_ville.')
+                (\''.$_ville.'\' IS NULL)
+                OR (Annonce.ville = \''.$_ville.'\')
                 )
             AND (
                 ('.$_codePostal.' IS NULL)
                 OR (Annonce.codePostal = '.$_codePostal.')
                 );';
         */
+
+        $query = '
+            SELECT
+                titre, type, adresse, codepostal, ville, details, prix, duree
+            FROM
+                Annonce
+                JOIN Annonce_Tarif ON Annonce.id = Annonce_Tarif.Annonceid
+                JOIN Tarif ON Annonce_Tarif.Tarifid = Tarif.id
+            WHERE
+                (
+                    (NULL IS NULL)
+                    OR (Annonce.capacite >= NULL)
+                    )
+                AND (
+                    (NULL IS NULL)
+                    OR (Annonce.capacite <= NULL)
+                    )
+                AND (
+                    (\''.$_ville.'\' IS NULL)
+                    OR (Annonce.ville = \''.$_ville.'\')
+                    )
+                AND (
+                    (NULL IS NULL)
+                    OR (Annonce.codePostal = NULL)
+                    );';
+
         
-            $result = $bdd->query($query)->fetchAll();
+        $result = $bdd->query($query)->fetchAll();
 
         foreach ($result as $row) {
             $titre = $row['titre'];
-            /*$type = $row['type'];
+            $type = $row['type'];
             $prix = $row['prix'];
             $duree = $row['duree'];
             $adresse = $row['adresse'];
             $codepostal = $row['codepostal'];
             $ville = $row['ville'];
-            $detail = $row['details'];*/
+            $details = $row['details'];
         ?>
         
         <div class="row annonce">
@@ -169,7 +196,7 @@
                     <?php echo $titre; ?>
                 </h1>
                 <h2 class="mb-0"><i class="material-icons">attach_money</i>
-                    <?php echo $prix ?>€/heure</h2>
+                    <?php echo $prix; ?>€/heure</h2>
                 <h2 class="mb-0"><i class="material-icons">place</i>
                     <?php echo $adresse.", ".$codepostal." ".$ville; ?>
                 </h2>

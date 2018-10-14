@@ -2,15 +2,17 @@
 <?php
 require_once('components/class/database.php');
 ?>
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="fr">
 
 <head>
-    <title>MBDesk - Accueil</title>
-    <link rel='stylesheet' href='css/style.css'>
-    <link rel="icon" href="favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MBDesk - Création annonce</title>
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel='stylesheet' href='css/style.css' />
 </head>
-
 
 <body>
 
@@ -83,7 +85,6 @@ require_once('components/class/database.php');
                 </div>
             </div>
         </section>
-
 
     <?php include("components/footer.php") ?>
     </div>
