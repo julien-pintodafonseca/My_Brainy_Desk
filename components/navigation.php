@@ -1,8 +1,4 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadowbox">
-    <a class="navbar-brand" href="#">
-        <img src="media/image/header/logo.png" width="30px" height="30px">
-        Navigation
-    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>

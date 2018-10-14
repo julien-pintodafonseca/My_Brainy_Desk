@@ -36,6 +36,10 @@ a:hover {
 }
 
 
+.navbar-expand-lg .navbar-collapse {
+    padding-left: 7%;
+}
+
 /* Paragraphes */
 p {
     font-family: 'Maven Pro', sans-serif;
