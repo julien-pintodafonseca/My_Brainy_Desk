@@ -22,54 +22,55 @@
         </section>
         
         <section>
-            <h2>Filtrer les annonces</h2>
-
-            <form>
-                <div class="row">
-                    <div class="col">
-                        <div class="form-group">
-                            <label for="ville">Ville</label>
-                            <input type="text" class="form-control" id="ville" placeholder="ex: Dijon">
+            <h2><a data-toggle="collapse">Filtrer les annonces</a></h2>
+            <div class="panel-collapse collapse">
+                <form>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="ville">Ville</label>
+                                <input type="text" class="form-control" id="ville" placeholder="ex: Dijon">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="code_postal">Code Postal</label>
+                                <input type="text" class="form-control" id="code_postal" placeholder="ex: 21000">
+                            </div>
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="form-group">
-                            <label for="code_postal">Code Postal</label>
-                            <input type="text" class="form-control" id="code_postal" placeholder="ex: 21000">
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="nombre_de_personne">Capacité</label>
+                                <select id="nombre_de_personne" class="form-control">
+                                    <option value="1-10">1 à 10 personnes</option>
+                                    <option value="11-25">11 à 25 personnes</option>
+                                    <option value="25+">Plus de 25 personnes</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="tarif_max">Prix horaire maximum</label>
+                                <select id="tarif_max" class="form-control">
+                                    <option>25€/h</option>
+                                    <option>50€/h</option>
+                                    <option>100€/h</option>
+                                    <option>250€/h</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="row">
-                    <div class="col">
-                        <div class="form-group">
-                            <label for="nombre_de_personne">Capacité</label>
-                            <select id="nombre_de_personne" class="form-control">
-                                <option value="1-10">1 à 10 personnes</option>
-                                <option value="11-25">11 à 25 personnes</option>
-                                <option value="25+">Plus de 25 personnes</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="form-group">
-                            <label for="tarif_max">Prix horaire maximum</label>
-                            <select id="tarif_max" class="form-control">
-                                <option>25€/h</option>
-                                <option>50€/h</option>
-                                <option>100€/h</option>
-                                <option>250€/h</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
+                    <button type="submit" class="btn btn-primary">Rechercher</button>
 
-                <button type="submit" class="btn btn-primary">Rechercher</button>
-
-            </form>
+                </form>
+            </div>
         </section>
 
-        <div class="row annonce">
+        <div class="row annonce mb-5">
             <div class="col-4" style="background-image:url('media/image/office.jpg');background-repeat:no-repeat;background-size:cover;background-position:center;"></div>
             <div class="col pt-2 ml-1">
                 <h1 class="mb-2">Salle de réunion foireuse</h1>

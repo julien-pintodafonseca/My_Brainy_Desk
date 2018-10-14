@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!isset($_SESSION['adminlogged']) || !$_SESSION['adminlogged'] || !isset($_GET['id']) || $_GET['id'])
+if(!isset($_SESSION['adminlogged']) || !$_SESSION['adminlogged'])
 {
     header('Location: index.php');
 }
@@ -14,6 +14,9 @@ $bdd = Database::bdd();
     <title>Ajouter un partenaire</title>
     <link rel="icon" href="../favicon.ico"/>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
 </head>
 <body>
 <div class="container">
@@ -137,7 +140,7 @@ $bdd = Database::bdd();
                         $ville = htmlspecialchars($_POST['ville']);
                         $mdp = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
 
-                        $requete = $bdd->prepare('INSERT INTO Utilisateur (email, password, prenom, nom, nomentreprise, siret, telephone, adresse, codepostal, ville, type, verifie) VALUES(:email, :password, :prenom, :nom, :nomentreprise, :siret, :telephone, :adresse, :codepostal, :ville, 0, 0); ');
+                        $requete = $bdd->prepare('INSERT INTO Utilisateur (email, password, prenom, nom, nomentreprise, siret, telephone, adresse, codepostal, ville, type, verifie) VALUES(:email, :password, :prenom, :nom, :nomentreprise, :siret, :telephone, :adresse, :codepostal, :ville, 1, 1); ');
                         $requete->execute(array(
                             "email" => $email,
                             "password" => $mdp,
@@ -154,7 +157,7 @@ $bdd = Database::bdd();
                         if($requete) {
                             echo('
                                         <div class="alert alert-success" role="alert">
-                                            <p>Inscription validée avec succès !</p>
+                                            <p>Compte partenaire créé avec succès !</p>
                                         </div>
                                         ');
                         }
@@ -239,7 +242,8 @@ $bdd = Database::bdd();
                     </div>
                 </div>
 
-                <button type="submit" class="btn btn-primary" value="Envoyer">Envoyer</button>
+                <button type="submit" class="btn btn-success" value="Envoyer">Envoyer</button>
+                <button type="reset" class="btn btn-danger">Réinitialiser</button>
             </form>
         </div>
     </div>
