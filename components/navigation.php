@@ -19,18 +19,9 @@
             <li class="nav-item">
                 <a id="contact" class="nav-link" href="contact.php">Contact</a>
             </li>
- 
-            
-            
-
-
-
-
         </ul>
-        
-        
-        
-    <span class="navbar-text">
+		
+    <div class="navbar-text r-buttons">
             <?php
             if (isset($_SESSION['id'])) {
                 echo '
@@ -47,12 +38,10 @@
             }
             
             ?>
-                </span>            
-                   
+	</div>            
+				
     </div>
 </nav>
-
-
 
 <script>
     var currentLocation = window.location.href;
