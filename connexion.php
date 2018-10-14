@@ -12,6 +12,8 @@ if(!isset($_SESSION['id']) && isset($_POST['email']) && isset($_POST['password']
         if(password_verify($_POST['password'], $infos['password']))
         {
             $_SESSION['id'] = $infos['id'];
+            $_SESSION['verifie'] = $infos['verifie'];
+            $_SESSION['partenaire'] = $infos['type'];
         }
         else {
             $echec = true;
