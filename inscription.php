@@ -11,9 +11,8 @@ if(!isset($_SESSION['id']) || !$_SESSION['id']) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>MBDesk - Inscription</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel='stylesheet' href='css/style.css'>
-    <link rel="icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel='stylesheet' href='css/style.css' />
 </head>
 
 <body>
@@ -250,7 +249,8 @@ if(!isset($_SESSION['id']) || !$_SESSION['id']) {
                             </div>
                         </div>
 
-                        <button type="submit" class="btn btn-primary" value="Envoyer">Envoyer</button>
+                        <button type="submit" class="btn btn-success" value="Envoyer">Envoyer</button>
+                        <button type="reset" class="btn btn-danger">Réinitialiser</button>
                     </form>
                 </div>
             </div>

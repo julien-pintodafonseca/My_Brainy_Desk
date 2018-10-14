@@ -3,15 +3,17 @@ session_start();
 require_once "../components/class/database.php";
 ?>
 <!doctype html>
-<html>
+<html lang="fr">
 <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="../favicon.ico" />
     <title>Panneau d'administration</title>
 </head>
 <body>
     <?php
     $success = false;
+    $bdd = Database::bdd();
     if(isset($_POST['email']) && isset($_POST['password'])) {
-        $bdd = Database::bdd();
         $requete = $bdd->prepare('SELECT * FROM Admin WHERE email = :email');
         $requete->execute(array("email" => $_POST['email']));
         if($infos = $requete->fetch()) {
@@ -24,7 +26,7 @@ require_once "../components/class/database.php";
     if(isset($_SESSION['adminlogged']) && $_SESSION['adminlogged']) {
         ?>
         <h1>Bienvenue dans la zone d'administration</h1>
-        <a href="partenaires.php">Voir les partenaires</a>
+        <a href="partenaires.php">Créer des partenaires</a>
         <h2>Utilisateurs en attente de validation.</h2>
         <table>
             <thead>
@@ -78,7 +80,7 @@ require_once "../components/class/database.php";
     ?>
     <form method="post" action="#">
         <label for="email">Adresse mail : </label>
-        <input type="text" placeholder="mail@example.tld" name="email" id="email" required autofocus /><br />
+        <input type="email" placeholder="mail@example.tld" name="email" id="email" required autofocus /><br />
         <label for="password">Mot de passe : </label>
         <input type="password" placeholder="Mot de passe" name="password" id="password" required  /><br />
         <button type="submit">Connexion</button>
