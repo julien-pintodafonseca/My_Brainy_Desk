@@ -3,7 +3,7 @@ session_start();
 require_once "../components/class/database.php";
 ?>
 <!doctype html>
-<html>
+<html lang="fr">
 <head>
     <meta charset="utf-8" />
     <link rel="icon" href="../favicon.ico" />
@@ -26,7 +26,7 @@ require_once "../components/class/database.php";
     if(isset($_SESSION['adminlogged']) && $_SESSION['adminlogged']) {
         ?>
         <h1>Bienvenue dans la zone d'administration</h1>
-        <a href="#">Voir les partenaires</a>
+        <a href="partenaires.php">Créer des partenaires</a>
         <h2>Utilisateurs en attente de validation.</h2>
         <table>
             <thead>
