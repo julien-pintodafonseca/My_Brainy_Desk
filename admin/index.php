@@ -9,14 +9,15 @@ require_once "../components/class/database.php";
 </head>
 <body>
     <?php
+    $success = false;
     if(isset($_POST['email']) && isset($_POST['password'])) {
-        $success = false;
         $bdd = Database::bdd();
-        $requete = $bdd->prepare('SELECT * FROM admin WHERE email = :email');
+        $requete = $bdd->prepare('SELECT * FROM Admin WHERE email = :email');
         $requete->execute(array("email" => $_POST['email']));
         if($pass = $requete->fetch()['password']) {
             if(password_verify($_POST['password'], $pass)) {
                 $_SESSION['adminlogged'] = true;
+                $success = true;
             }
         }
     }
