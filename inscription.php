@@ -31,6 +31,11 @@ if(!isset($_SESSION['id']) || !$_SESSION['id']) {
 
         <section>
             <div class="row">
+                <div class="col text-center">
+                    <i class="material-icons mb-3" style="font-size: 84px;">person_add</i>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col">
                     <p style="color:red">
                         <?php
