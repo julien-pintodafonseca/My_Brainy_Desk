@@ -18,12 +18,25 @@
         </section>
 
         <form>
-        <label for="nombre_de_personne">Nombre de personnes</label>
-        <input type="radio" id="nombre_de_personne" value="0-5">
-        <input type="radio" id="nombre_de_personne" value="5-15">
-        <input type="radio" id="nombre_de_personne" value="15-25">
-        <input type="radio" id="nombre_de_personne" value="25-50">        
 
+        <div>
+        <label for="nombre_de_personne">Nombre de personnes</label>  
+
+        <input type="radio" name="nombre_de_personne" value="0-5" id="0-5" /> 
+        <label for="0-5">0-5</label>
+
+        <input type="radio" name="nombre_de_personne" value="5-10" id="5-10" /> 
+        <label for="5-10">5-10</label>
+
+        <input type="radio" name="nombre_de_personne" value="10-25" id="10-25" /> 
+        <label for="10-25">10-25</label>
+
+        <input type="radio" name="nombre_de_personne" value="25-50" id="25-50" /> 
+        <label for="25-50">25-50</label>
+
+        </div>
+
+        <br />
 
         <label for="ville">Ville</label>
         <select id="ville">
@@ -34,12 +47,17 @@
             <option>ville5</option>
         </select>
 
+        <br />
+
         <label for="code_postal">Code Postal</label>
-        <input type="number" id="code_postal" maxlength="5" placeholder="ex: 89000">
+        <input type="text" id="code_postal" maxlength="5" placeholder="ex: 89000">
+        <br />
+
 
         <button type="submit">Rechercher</button>
 
         </form>
+        <br />
 
 
         <p>ICI CHAMPS POUR LES FILTRES !!!</p>
