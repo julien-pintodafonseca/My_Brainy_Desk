@@ -139,40 +139,96 @@ require_once('components/class/database.php');
 					?>
 					</p>
 					<form action="#" method="post" id="registration-form">
-						<label for="nom">Nom :&nbsp;</label>
-						<input type="text" name="nom" placeholder="Nom" maxlength="255" required/><br />
+                        
+                        
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="nom">Nom</label>
+                                    <input type="text" class="form-control" id="nom" placeholder="Angular" maxlength="255" required>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="prenom">Prénom</label>
+                                    <input type="text" class="form-control" id="prenom" placeholder="Js" maxlength="255" required>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="tel">Numéro Téléphone</label>
+                                    <input type="tel" class="form-control" name="tel" placeholder="Numéro sans espace" size="17" maxlength="10" required>
+                                </div>
+                            </div>
+                        </div>
 
-						<label for="prenom">Prénom :&nbsp;</label>
-						<input type="text" name="prenom" placeholder="Prénom" maxlength="255" required/><br />
 
-						<label for="entreprise">Nom de l'entreprise :&nbsp;</label>
-						<input type="text" name="entreprise" placeholder="Entreprise" maxlength="255" required/><br />
 
-						<label for="siret">Numéro de SIRET :&nbsp;</label>
-						<input type="text" name="siret" placeholder="SIRET" maxlength="14" required/><br />
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="entreprise">Nom de l'entreprise</label>
+                                    <input type="text" class="form-control" id="entreprise" placeholder="AngularJs" maxlength="255" required>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="siret">Numéro de SIRET</label>
+                                    <input type="text" class="form-control" id="siret" placeholder="156465416532" maxlength="14" required>
+                                </div>
+                            </div>
+                        </div>
 
-						<label for="adresse">Adresse :&nbsp;</label>
-						<input type="text" name="adresse" placeholder="Adresse" maxlength="255" required/><br />
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="adresse">Adresse</label>
+                                    <input type="text" class="form-control" id="adresse" placeholder="13 rue du pinguin" maxlength="255" required>
+                                </div>
+                            </div>
+                        </div>
 
-						<label for="cp">Code Postal :&nbsp;</label>
-						<input type="text" name="cp" placeholder="CP" maxlength="5" required/><br />
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="ville">Ville</label>
+                                    <input type="text" class="form-control" id="ville" placeholder="Dijon" maxlength="255" required>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="cp">Code Postal</label>
+                                    <input type="text" class="form-control" id="cp" placeholder="21000" maxlength="5" required>
+                                </div>
+                            </div>
+                        </div>
 
-                        <label for="ville">Ville :&nbsp;</label>
-                        <input type="text" name="ville" id="ville" placeholder="Ville" maxlength="255" required /><br />
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="email">Adresse Mail</label>
+                                    <input type="email" class="form-control" name="email" placeholder="mail@example.tld" maxlength="255" required>
+                                </div>
+                            </div>
+                        </div>
 
-						<label for="email">Adresse Mail :&nbsp;</label>
-						<input type="email" name="email" placeholder="mail@example.tld" maxlength="255" required/><br />
 
-						<label for="tel">Numéro Téléphone :&nbsp;</label>
-						<input type="tel" name="tel" placeholder="Numéro sans espace" size="17" maxlength="10" required/><br />
-
-						<label for="mdp">Mot de Passe :&nbsp;</label>
-						<input type="password" name="mdp" placeholder="Mot de passe" maxlength="255"  required/><br />
-
-						<label for="c_mdp">Confirmation :&nbsp;</label>
-						<input type="password" name="c_mdp" placeholder="Mot de passe" maxlength="255"  required/><br />
-
-						<input type="submit" value="Envoyer" />
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="mdp">Mot de Passe</label>
+                                    <input type="password" class="form-control" name="mdp" placeholder="Mot de passe" maxlength="255" required>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="c_mdp">Confirmation</label>
+                                    <input type="password" class="form-control" name="c_mdp" placeholder="Mot de passe" maxlength="255" required>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Envoyer</button>
 					</form>
                 </div>
             </div>
