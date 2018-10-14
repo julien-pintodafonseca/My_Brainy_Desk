@@ -80,15 +80,63 @@
 
         <?php require_once("config/database.php");
 
+        
+        $_ville = NULL;
+        if (isset($_POST['ville'])) {
+            $_ville = $_POST['ville'];
+        }
+
+        $_codePostal = NULL;
+        if (isset($_POST['code_postal'])) {
+            $_codePostal = $_POST['code_postal'];
+        }
+
+        $_nbPersonnes_min = NULL;
+        $_nbPersonnes_max = NULL;
+
+        if (isset($_POST['nombre_de_personne']) {
+            if ($_POST['nombre_de_personne'] == "1-10") {
+                $_nbPersonnes_min = 1;
+                $_nbPersonnes_max = 10;
+            }
+            else if ($_POST['nombre_de_personne'] == "11-25") {
+                $_nbPersonnes_min = 11;
+                $_nbPersonnes_max = 25;
+            }
+            else {
+                $_nbPersonnes_min = 25;
+            }
+        }
+
+
         // AJOUTER LA/LES PHOTOS !!!!!!!!
         // + récupérer ordre : DESC/ASC ?
 
         $query = $BDD->query('
-            SELECT titre, type, adresse, codepostal, ville, details, prix, duree 
-            FROM Annonce
+        SELECT
+            titre, type, adresse, codepostal, ville, details, prix, duree
+        FROM
+            Annonce
             JOIN Annonce_Tarif ON Annonce.id = Annonce_Tarif.Annonceid
-            JOIN Tarif ON Annonce_Tarif.Tarifid = Tarif.id;
-        ')->fetchAll(); 
+            JOIN Tarif ON Annonce_Tarif.Tarifid = Tarif.id
+        WHERE
+            (
+                ('.$_nbPersonnes_min.' IS NULL)
+                OR (Annonce.capacite >= '.$_nbPersonnes_min.')
+                )
+            AND (
+                ('.$_nbPersonnes_max.' IS NULL)
+                OR (Annonce.capacite <= '.$_nbPersonnes_max.')
+                )
+            AND (
+                ('.$_ville.' IS NULL)
+                OR (Annonce.ville = '.$_ville.')
+                )
+            AND (
+                ('.$_codePostal.' IS NULL)
+                OR (Annonce.codePostal = '.$_codePostal.')
+                );
+        ')->fetchAll();  
 
         foreach ($query as $row) {
             $titre = $row['titre'];
