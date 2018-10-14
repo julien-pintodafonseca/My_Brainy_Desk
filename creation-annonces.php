@@ -29,6 +29,25 @@ require_once('components/class/database.php');
         <section>
             <div class="row">
                 <div class="col">
+                    <?php
+                        $check = isset($_POST['titre'])
+                        && isset($_POST['adresse'])
+                        && isset($_POST['codepostal'])
+                        && isset($_POST['ville'])
+                        && isset($_POST['capacite'])
+                        && isset($_POST['details'])
+                        && isset($_POST['type']);
+
+                        if ($check) {
+                            $titre = $_POST['titre'];
+                            $adresse = $_POST['adresse'];
+                            $codepostal = $_POST['codepostal'];
+                            $ville = $_POST['ville'];
+                            $capacite = $_POST['capacite'];
+                            $details = $_POST['details'];
+                            $type = $_POST['type'];
+                        }
+                    ?>
                     <form action="" method="post" id="annonce-form">
 
                     <!-- ajouter photo -->
@@ -42,8 +61,8 @@ require_once('components/class/database.php');
 
                         <div class="row">
                             <div class="col form-group">
-                            <label for="description">Description</label>
-                            <input type="text" class="form-control" name="titre" id="descrition" placeholder="Description" maxlength="255" required />
+                            <label for="details">Description</label>
+                            <input type="text" class="form-control" name="details" id="details" placeholder="Description" maxlength="255" required />
                             </div>
                         </div>
 
@@ -63,25 +82,42 @@ require_once('components/class/database.php');
                             </div>
                             <div class="col">
                                 <div class="form-group">
-                                    <label for="cp">Code Postal</label>
-                                    <input type="text" class="form-control" id="cp" name="cp" placeholder="21000" maxlength="5" required />
+                                    <label for="codepostal">Code Postal</label>
+                                    <input type="text" class="form-control" id="codepostal" name="codepostal" placeholder="21000" maxlength="5" required />
                                 </div>
                             </div>
                         </div>
 
-                        <div>
-
-                            <label for="type">Type de location</label>
-                            <select id="type" class="form-control">
-                                <option>Bureau</option>
-                                <option>Espace de Co-working</option>
-                                <option>Salle de réunion</option>
-                                <option>Salle de formation</option>
-                            </select>
-
+                        <div class="row">
+                            <div class="col form-group">
+                                <label for="type">Type de location</label>
+                                <select id="type" class="form-control">
+                                    <option>Bureau</option>
+                                    <option>Espace de Co-working</option>
+                                    <option>Salle de réunion</option>
+                                    <option>Salle de formation</option>
+                                </select>
+                            </div>
                         </div>
                         <button type="submit" class="btn btn-primary" value="confirmer">Confirmer</button>
                     </form>
+
+                    <?php
+                        if ($check) {
+                            $bdd = Database::bdd();
+
+                            $requete = $bdd->prepare('INSERT INTO Annonce (titre, adresse, codepostal, ville, capacite, details, type) VALUES(:titre, :adresse, :codepostal, :ville, :capacite, :details, :type); ');
+                            $requete->execute(array(
+                                "titre" => $titre,
+                                "adresse" => $adresse,
+                                "codepostal" => $codepostal,
+                                "ville" => $ville,
+                                "capacite" => $capacite,
+                                "details" => $details,
+                                "type" => $type
+                            ));
+                        }
+                    ?>
                 </div>
             </div>
         </section>
