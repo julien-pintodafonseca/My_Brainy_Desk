@@ -9,7 +9,7 @@
             </li>
             <li class="nav-item">
                 <a id="annonces" class="nav-link" href="annonces.php">Annonces</a>
-            </li>            
+            </li>
             <li class="nav-item">
                 <a id="partenaires" class="nav-link" href="partenaires.php">Partenaires</a>
             </li>
@@ -23,24 +23,27 @@
             if (isset($_SESSION['id'])) {
                 echo '
                     <li class="nav-item">
-                        <a id="contact" class="nav-link" href="contact.php">Contact</a>
-                    </li>                
+                        <a id="profil" class="highlight" href="profil.php">Mon profil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="deconnexion" class="highlight" href="deconnexion.php">Se déconnecter</a>
+                    </li>     
                 ';
             } else {
                 echo '
                     <li class="nav-item">
-                        <a id="connexion" class="nav-link highlight" href="connexion.php">Se connecter</a>
+                        <a id="connexion" class="highlight" href="connexion.php">Se connecter</a>
                     </li>
                     <li class="nav-item">
-                        <a id="inscription" class="nav-link highlight" href="inscription.php">Créer un compte</a>
+                        <a id="inscription" class="highlight" href="inscription.php">Créer un compte</a>
                     </li>  
                 ';                
             }
             
             ?>
-            
-            
-            
+
+
+
         </ul>
     </div>
 </nav>
@@ -74,5 +77,3 @@
     document.getElementById(activePage).classList.add("active");
 
 </script>
-
-
