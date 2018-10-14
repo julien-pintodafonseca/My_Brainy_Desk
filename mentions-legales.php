@@ -26,10 +26,10 @@
 
         <section>
             <div class="row" style="align-items:center;">
-                <div class="col-5 text-center">
+                <div class="col-sm-12 col-md-5 mb-5 text-center">
                     <img src="media/image/mentions-legales.jpg" alt="Mentions légales" style="max-height:500px;width:auto;">
                 </div>
-                <div class="col">
+                <div class="col-sm-12 col-md-7">
                     <h2 class="mb-3">Editeur</h2>
                     <p class="mb-4"><b>Nom</b><br />San Antonio</p>
                     <p class="mb-4"><b>Adresse mail</b><br />contact@editeur.fr</p>
