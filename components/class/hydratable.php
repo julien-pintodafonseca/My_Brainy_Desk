@@ -1,5 +1,6 @@
 <?php
-class Hydratable
+require_once 'stockable.php';
+abstract class Hydratable extends Stockable
 {
     public function hydrate(array $donnnees)
     {

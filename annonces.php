@@ -1,5 +1,7 @@
+<?php require_once 'components/class/annonces.php'; ?>
+<?php require_once 'conf/database.php'; ?>
+<!doctype html>
 <html>
-
 <head>
     <title>MBDesk - Annonces</title>
     <link rel='stylesheet' href='css/style.css'>
