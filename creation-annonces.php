@@ -1,19 +1,21 @@
-<!DOCTYPE html>
-<html lang="fr">
+<?php session_start(); ?>
+<?php
+require_once('components/class/database.php');
+?>
+<!doctype html>
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Création Annonce</title>
+    <title>MBDesk - Accueil</title>
     <link rel='stylesheet' href='css/style.css'>
-    <link rel="icon" href="icon.ico">
+    <link rel="icon" href="favicon.ico">
 </head>
+
 
 <body>
 
     <?php include("components/header.php"); ?>
-
+    <div class="container">
         <section class="mb-5">
             <div class="row">
                 <div class="col">
@@ -21,6 +23,7 @@
                 </div>
             </div>
         </section>
+
         <section>
             <div class="row">
                 <div class="col">
@@ -78,7 +81,8 @@
 
 
     <?php include("components/footer.php") ?>
-
+    </div>
+    
     <script src="lib/jquery/jquery-3.3.1.min.js"></script>
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
     <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
