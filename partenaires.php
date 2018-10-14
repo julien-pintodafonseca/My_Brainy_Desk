@@ -25,81 +25,63 @@
             </div>
         </section>
 
-        <!-- affiche chacun des partenaires de la bdd -->
-
         <section>
-            <div class="row">
+            <div class="row mb-5">
                 <div class="col">
-                    <img src="https://www.tensorflow.org/site-assets/images/partner-logos/airbnb.192.png">
+                    <img src="https://www.tensorflow.org/site-assets/images/partner-logos/airbnb.192.png" width="150px" height="auto">
                 </div>
                 <div class="col">
-                    <img src="https://www.tensorflow.org/site-assets/images/partner-logos/amd.png">
+                    <img src="https://www.tensorflow.org/site-assets/images/partner-logos/amd.png" width="150px" height="auto">
                 </div>
                 <div class="col">
-                    <img src="https://www.tensorflow.org/site-assets/images/partner-logos/nvidia.png">
+                    <img src="https://www.tensorflow.org/site-assets/images/partner-logos/nvidia.png" width="150px" height="auto">
                 </div>
                 <div class="col">
-                    <img src="https://www.tensorflow.org/site-assets/images/partner-logos/uber.192.png">
+                    <img src="https://www.tensorflow.org/site-assets/images/partner-logos/uber.192.png" width="150px" height="auto">
                 </div>                
             </div>
-            
-            <div class="row">
+            <div class="row mb-5">
                 <div class="col">
-                    <img src="https://www.tensorflow.org/site-assets/images/partner-logos/sap.192.png">
+                    <img src="https://www.tensorflow.org/site-assets/images/partner-logos/sap.192.png" width="150px" height="auto">
                 </div>
                 <div class="col">
-                    <img src="https://www.tensorflow.org/site-assets/images/partner-logos/kakao.png">
+                    <img src="https://www.tensorflow.org/site-assets/images/partner-logos/kakao.png" width="150px" height="auto">
                 </div>
                 <div class="col">
-                    <img src="https://www.tensorflow.org/site-assets/images/partner-logos/deepmind.192.png">
+                    <img src="https://www.tensorflow.org/site-assets/images/partner-logos/deepmind.192.png" width="150px" height="auto">
                 </div>
                 <div class="col">
-                    <img src="https://www.tensorflow.org/site-assets/images/partner-logos/dropbox.192.png">
+                    <img src="https://www.tensorflow.org/site-assets/images/partner-logos/dropbox.192.png" width="150px" height="auto">
                 </div>                
             </div>
-            
-            <div class="row">
+            <div class="row mb-5">
                 <div class="col">
-                    <img src="https://www.tensorflow.org/site-assets/images/partner-logos/ebay.192.png">
+                    <img src="https://www.tensorflow.org/site-assets/images/partner-logos/ebay.192.png" width="150px" height="auto">
                 </div>
                 <div class="col">
-                    <img src="https://www.tensorflow.org/site-assets/images/partner-logos/google.192.png">
+                    <img src="https://www.tensorflow.org/site-assets/images/partner-logos/google.192.png" width="150px" height="auto">
                 </div>
                 <div class="col">
-                    <img src="https://www.tensorflow.org/site-assets/images/partner-logos/snapchat.192.png">
+                    <img src="https://www.tensorflow.org/site-assets/images/partner-logos/snapchat.192.png" width="150px" height="auto">
                 </div>
                 <div class="col">
-                    <img src="https://www.tensorflow.org/site-assets/images/partner-logos/intel.192.png">
+                    <img src="https://www.tensorflow.org/site-assets/images/partner-logos/intel.192.png" width="150px" height="auto">
                 </div>                
             </div>            
-            <div class="row">
+            <div class="row mb-5">
                 <div class="col">
-                    <img src="https://www.tensorflow.org/site-assets/images/partner-logos/coca_cola.png">
+                    <img src="https://www.tensorflow.org/site-assets/images/partner-logos/coca_cola.png" width="150px" height="auto">
                 </div>
                 <div class="col">
-                    <img src="https://www.tensorflow.org/site-assets/images/partner-logos/xiaomi.192.png">
+                    <img src="https://www.tensorflow.org/site-assets/images/partner-logos/xiaomi.192.png" width="150px" height="auto">
                 </div>
                 <div class="col">
-                    <img src="https://www.tensorflow.org/site-assets/images/partner-logos/qualcomm.192.png">
+                    <img src="https://www.tensorflow.org/site-assets/images/partner-logos/qualcomm.192.png" width="150px" height="auto">
                 </div>
                 <div class="col">
-                    <img src="https://www.tensorflow.org/site-assets/images/partner-logos/twitter.192.png">
+                    <img src="https://www.tensorflow.org/site-assets/images/partner-logos/twitter.192.png" width="150px" height="auto">
                 </div>                
             </div>              
-
-        </section>
-
-
-        <div class="row annonce">
-            <div class="col-4" style="background-image:url('media/image/partenaires.jpg');background-repeat:no-repeat;background-size:cover;background-position:center;"></div>
-            <div class="col pt-2 ml-1">
-                <h1 class="mb-2">Nom entreprise partenaire</h1>
-                <h2 class="mb-0"><i class="material-icons">place</i> Adresse entreprise, code postal, ville</h2>
-            </div>
-        </div>
-
-        <section>
-
         </section>
 
         <?php include("components/footer.php") ?>
