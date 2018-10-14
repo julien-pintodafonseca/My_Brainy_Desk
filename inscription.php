@@ -182,33 +182,33 @@ if(!isset($_SESSION['id']) || !$_SESSION['id']) {
 
                         <div class="row">
                             <div class="col form-group">
-                                <label for="nom">Nom</label>
+                                <label for="nom"><i class="material-icons">person</i> Nom</label>
                                 <input type="text" class="form-control" id="nom" name="nom" placeholder="Angular" maxlength="255" required />
                             </div>
                             <div class="col form-group">
-                                <label for="prenom">Prénom</label>
+                                <label for="prenom"><i class="material-icons">face</i> Prénom</label>
                                 <input type="text" class="form-control" id="prenom" name="prenom" placeholder="Js" maxlength="255" required />
                             </div>
                             <div class="col form-group">
-                                <label for="tel">Numéro Téléphone</label>
+                                <label for="tel"><i class="material-icons">phone</i> Numéro Téléphone</label>
                                 <input type="tel" class="form-control" id="tel" name="tel" placeholder="Numéro sans espace" maxlength="10" required />
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col form-group">
-                                <label for="entreprise">Nom de l'entreprise</label>
+                                <label for="entreprise"><i class="material-icons">work_outline</i> Nom de l'entreprise</label>
                                 <input type="text" class="form-control" id="entreprise" name="entreprise" placeholder="AngularJs" maxlength="255" required />
                             </div>
                             <div class="col form-group">
-                                <label for="siret">Numéro de SIRET</label>
+                                <label for="siret"><i class="material-icons">business</i> Numéro de SIRET</label>
                                 <input type="text" class="form-control" id="siret" name="siret" placeholder="156465416532" maxlength="14" required />
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col form-group">
-                                <label for="adresse">Adresse</label>
+                                <label for="adresse"><i class="material-icons">place</i> Adresse</label>
                                 <input type="text" class="form-control" id="adresse" name="adresse" placeholder="13 rue du pinguin" maxlength="255" required />
                             </div>
                         </div>
@@ -216,13 +216,13 @@ if(!isset($_SESSION['id']) || !$_SESSION['id']) {
                         <div class="row">
                             <div class="col">
                                 <div class="form-group">
-                                    <label for="ville">Ville</label>
+                                    <label for="ville"><i class="material-icons">location_city</i> Ville</label>
                                     <input type="text" class="form-control" id="ville" name="ville" placeholder="Dijon" maxlength="255" required />
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="form-group">
-                                    <label for="cp">Code Postal</label>
+                                    <label for="cp"><i class="material-icons">map</i> Code Postal</label>
                                     <input type="text" class="form-control" id="cp" name="cp" placeholder="21000" maxlength="5" required />
                                 </div>
                             </div>
@@ -230,18 +230,18 @@ if(!isset($_SESSION['id']) || !$_SESSION['id']) {
 
                         <div class="row">
                             <div class="col form-group">
-                                <label for="email">Adresse Mail</label>
+                                <label for="email"><i class="material-icons">alternate_email</i> Adresse Mail</label>
                                 <input type="email" class="form-control" id="email" name="email" placeholder="mail@example.tld" maxlength="255" required />
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col form-group">
-                                <label for="mdp">Mot de Passe</label>
+                                <label for="mdp"><i class="material-icons">security</i> Mot de Passe</label>
                                 <input type="password" class="form-control" id="mdp" name="mdp" placeholder="Mot de passe" maxlength="255" required />
                             </div>
                             <div class="col form-group">
-                                <label for="c_mdp">Confirmation</label>
+                                <label for="c_mdp"><i class="material-icons">verified_user</i> Confirmation</label>
                                 <input type="password" class="form-control" id="c_mdp" name="c_mdp" placeholder="Mot de passe" maxlength="255" required />
                             </div>
                         </div>

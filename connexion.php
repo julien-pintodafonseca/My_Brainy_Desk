@@ -65,11 +65,11 @@ if(isset($_SESSION['id']))
                 <div class="col">
                     <form method="post" action="#">
                         <div class="form-group">
-                            <label for="email">Adresse électronique</label>
+                            <label for="email"><i class="material-icons">alternate_email</i> Adresse électronique</label>
                             <input type="email" class="form-control" id="email" name="email" placeholder="utilisateur@adresse.com" autofocus required />
                         </div>
                         <div class="form-group">
-                            <label for="motdepasse">Mot de passe</label>
+                            <label for="motdepasse"><i class="material-icons">security</i> Mot de passe</label>
                             <input type="password" class="form-control" id="password" name="password" placeholder="Mot de passe" required />
                         </div>
                         <button type="submit" class="btn btn-primary">Envoyer</button>
