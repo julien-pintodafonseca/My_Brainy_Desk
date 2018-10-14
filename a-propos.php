@@ -28,28 +28,16 @@
             <div class="row" style="align-items:center;">
                 <div class="col">
                     <p>
-                    Antonio Díaz Lombardo créa Aeronaves de México en septembre 1934. Son premier avion fut un Stinson SR qui effectua son vol inaugural sur la route Mexico-Acapulco le 14 septembre 1934, piloté par Julio Zinser. Devenu une filiale du groupe Pan American World Airways, elle absorbera à partir de 1952 plusieurs petites compagnies, dont Lamsa, Aerovias Reforma, Aerolíneas Mexicanas SA et Guest Aerovías. En 1959, Aeronaves de México fut nationalisée, Pan Am cédant sa participation au capital au gouvernement mexicain.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fermentum interdum nunc sed semper. Nulla pharetra, sem vitae aliquet pellentesque, nunc lectus sagittis massa, id bibendum enim mauris vel quam. Curabitur sed libero eu arcu feugiat aliquet nec non metus. Suspendisse lorem diam, sodales sed eros ut, volutpat condimentum leo. Curabitur quis interdum erat. Nullam ornare ex nec dui egestas dignissim. Nunc sodales a purus vitae commodo. Nunc neque risus, maximus id gravida vel, auctor eu ligula. Nam quis elementum elit. Nunc at augue tempus, laoreet sem a, placerat enim. Praesent at rutrum elit, in luctus ex.
                     </p>
                     <p>
-                    En 1970, les lignes aériennes intérieures du Mexique furent réorganisées selon une directive gouvernemental, huit compagnies régionales placées sous le contrôle d'Aeronaves de México desservant 31 aéroports mexicains, tandis qu'Aeronaves de México assurait sous son nom les liaisons internationales à destination de Panama, Caracas, Bogota, Lima, Los Angeles, Tucson, Houston, Miami, New York, Madrid et Paris.
+                    Suspendisse ac nulla aliquam mauris malesuada sollicitudin. Donec at consequat ex. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam lobortis porta nibh vitae volutpat. Nulla facilisi. Sed luctus magna sit amet efficitur gravida. Morbi in tristique lectus. Fusce imperdiet a nisl nec efficitur. Phasellus commodo tincidunt eros nec molestie. Aliquam congue at velit vitae consequat. Sed at quam nulla. Suspendisse aliquam elit eget odio consequat, eu cursus sem lacinia. Nam nec neque lacus.
                     </p>
                     <p>
-                    En février 1972, Aeronaves de México est devenu Aeroméxico. Début 1983 les effectifs de la compagnie dépassaient les 10 000 personnes pour une flotte composée de quatre McDonnell Douglas DC-10, cinq Douglas DC-8-50 et 29 Douglas DC-9, dont quatre Douglas DC-9-80 sur une commande de huit exemplaires2.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi a metus lectus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean tincidunt massa sagittis enim vulputate, sit amet sodales eros eleifend. Quisque et elit enim. Phasellus lacinia turpis eget dui congue cursus. Aliquam dictum convallis nunc. Donec eget est at magna congue eleifend id vel ex.
                     </p>
                     <p>
                     Le 1er octobre 1988 naît Aerovías de México, S.A. de C.V, qui conserve le nom de marque Aeroméxico et l'emblème du Caballero Águila.
-                    </p>
-                    <p>
-                    Le 28 juin 1996 naît la Corporación International de Transporte Aéreo (CINTRA), comme une holding de compagnies aériennes. En 1996, Mexicana entre dans le groupe CINTRA, une holding qui comprend les compagnies suivantes : Mexicana de Aviación (vendue depuis), Aerocaribe (vendue depuis), Aeroméxico, SEAT, Aerolitoral, Aeromexpress, Centro de Capacitación Alas de América et Sabre Mexique. CINTRA est actuellement une des plus grandes entreprises du Mexique.
-                    </p>
-                    <p>
-                    En 2012, Aeroméxico a transporté 14,812 millions de passagers.
-                    </p>
-                    <p>
-                    En août 2013, la compagnie reçoit son premier Boeing 787 Dreamliner.
-                    </p>
-                    <p>
-                    En novembre 2015, Delta Air Lines annonce son intention d'acquérir une participation de 32 % dans Aeromexico pour près de 600 millions de dollars.
                     </p>
                 </div>
             </div>
