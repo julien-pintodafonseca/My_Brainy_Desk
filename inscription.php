@@ -31,57 +31,70 @@
 
 						$formExist = isset($_POST['nom'])
 							&& isset($_POST['prenom'])
-							&& isset($_POST['nom_entreprise'])
-							&& isset($_POST['num_siret'])
+							&& isset($_POST['entreprise'])
+							&& isset($_POST['siret'])
 							&& isset($_POST['adresse'])
 							&& isset($_POST['cp'])
 							&& isset($_POST['email'])
-							&& isset($_POST['num_tel'])
+							&& isset($_POST['tel'])
 							&& isset($_POST['mdp'])
 							&& isset($_POST['c_mdp']);
 
 						if ($formExist) {
 							$valid = true;
 
+							$_POST['email'] = filter_var($_POST['email'],FILTER_SANITIZE_EMAIL);
+							$_POST['siret'] = filter_var($_POST['siret'],FILTER_SANITIZE_NUMBER_INT);
+							$_POST['cp'] = filter_var($_POST['cp'],FILTER_SANITIZE_NUMBER_INT);
+							$_POST['tel'] = filter_var($_POST['tel'],FILTER_SANITIZE_NUMBER_INT);
+
 							$formIsOk = strlen($_POST['nom']) <= 255
 								&& strlen($_POST['prenom']) <= 255
-								&& strlen($_POST['nom_entreprise']) <= 255
+								&& strlen($_POST['entreprise']) <= 255
 								&& strlen($_POST['adresse']) <= 255
 								&& strlen($_POST['email']) <= 255;
 
 							if (!$formIsOk) {
 								echo("Les informations saisies ne sont pas correctes !<br />");
+								$valid = false;
 							} else {
-								if (strlen($_POST['num_siret']) != 14) {
-									echo("Le numéro de SIRET doit contenir 14 caractères !<br />");
+								if (strlen($_POST['siret']) != 14) {
+									echo("Le numéro de SIRET doit contenir 14 chiffres !<br />");
+									$valid = false;
 								}
 								if (strlen($_POST['cp']) != 5) {
-									echo("Le code postal doit contenir 5 caractères !<br />");
+									echo("Le code postal doit contenir 5 chiffres !<br />");
+									$valid = false;
 								}
-								if (!strpos($_POST['email'], '@') && !strpos($_POST['email'], '.')) {
+								if (!strpos($_POST['email'], '@') && !strpos($_POST['email'], '.') || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
 									echo("L'adresse email est incorrecte !<br />");
+									$valid = false;
 								}
-								if (strpos($_POST['num_tel'], ' ')) {
+								if (strpos($_POST['tel'], ' ')) {
 									echo("Le numéro de téléphone ne doit pas contenir d'espace(s) !<br />");
+									$valid = false;
 								}
-								if (strlen($_POST['num_tel']) != 10) {
+								if (strlen($_POST['tel']) != 10) {
 									echo("Le numéro de téléphone est incorrecte !<br />");
+									$valid = false;
 								}
 								if ($_POST['mdp'] != $_POST['c_mdp']) {
 									echo("Les deux mot de passes ne sont pas identiques !<br />");
+									$valid = false;
 								}
 							}
 
 							if ($valid) {
-								$nom = $_POST['login'];
+								$nom = $_POST['nom'];
 								$prenom = $_POST['prenom'];
-								$entreprise = $_POST['nom_entreprise'];
-								$siret = $_POST['num_siret'];
+								$entreprise = $_POST['entreprise'];
+								$siret = $_POST['siret'];
 								$cp = $_POST['cp'];
 								$email = $_POST['email'];
-								$tel = $_POST['num_tel'];
+								$tel = $_POST['tel'];
 								$mdp = md5($_POST['mdp']);
 								
+								echo("<span style=\"color:green\">Inscription validée avec succès !</span>");
 								//INSERT SQL infos validées
 							}
 						}
@@ -94,11 +107,11 @@
 						<label for="prenom">Prénom :&nbsp;</label>
 						<input type="text" name="prenom" placeholder="Prénom" maxlength="255" required/><br />
 
-						<label for="nom_entreprise">Nom de l'entreprise :&nbsp;</label>
-						<input type="text" name="nom_entreprise" placeholder="Entreprise" maxlength="255" required/><br />
+						<label for="entreprise">Nom de l'entreprise :&nbsp;</label>
+						<input type="text" name="entreprise" placeholder="Entreprise" maxlength="255" required/><br />
 
-						<label for="num_siret">Numéro de SIRET :&nbsp;</label>
-						<input type="text" name="num_siret" placeholder="SIRET" maxlength="14" required/><br />
+						<label for="siret">Numéro de SIRET :&nbsp;</label>
+						<input type="text" name="siret" placeholder="SIRET" maxlength="14" required/><br />
 
 						<label for="adresse">Adresse :&nbsp;</label>
 						<input type="text" name="adresse" placeholder="Adresse" maxlength="255" required/><br />
@@ -109,8 +122,8 @@
 						<label for="email">Adresse Mail :&nbsp;</label>
 						<input type="email" name="email" placeholder="Email" maxlength="255" required/><br />
 
-						<label for="num_tel">Numéro Téléphone :&nbsp;</label>
-						<input type="tel" name="num_tel" placeholder="Numéro sans espace" size="17" maxlength="10" required/><br />
+						<label for="tel">Numéro Téléphone :&nbsp;</label>
+						<input type="tel" name="tel" placeholder="Numéro sans espace" size="17" maxlength="10" required/><br />
 
 						<label for="mdp">Mot de Passe :&nbsp;</label>
 						<input type="password" name="mdp" placeholder="Mot de passe" maxlength="255"  required/><br />
