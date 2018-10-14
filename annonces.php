@@ -76,11 +76,11 @@
         <div class="row annonce mt-4 mb-5">
             <div class="col-4" style="background-image:url('media/image/office.jpg');background-repeat:no-repeat;background-size:cover;background-position:center;"></div>
             <div class="col pt-2 ml-1">
-                <h1 class="mb-2">Salle de réunion foireuse</h1>
-                <h2 class="mb-0"><i class="material-icons">attach_money</i> 500€/heure</h2>
-                <h2 class="mb-0"><i class="material-icons">place</i> 13 rue de l'angular, 21000 Dijon</h2>
+                <h1 class="mb-2">Salle de réunion Test</h1>
+                <h2 class="mb-0"><i class="material-icons">attach_money</i> 50€ la demi-journée</h2>
+                <h2 class="mb-0"><i class="material-icons">place</i> 13 rue du test, 21000 Dijon</h2>
                 <h2><i class="material-icons">people</i> 10-20 personnes</h2>
-                <p>La salle de réunion Angular est située en plein coeur du XIIe arrondissement de Dijon, qui n'existe pas.</p>
+                <p>La salle de réunion Test est située en plein coeur du XIIe arrondissement de Dijon.</p>
             </div>
         </div>
 
