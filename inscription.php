@@ -47,16 +47,14 @@ if(!isset($_SESSION['id']) || !$_SESSION['id']) {
 							$valid = true;
 
 							$_POST['email'] = filter_var($_POST['email'],FILTER_SANITIZE_EMAIL);
-							$_POST['siret'] = filter_var($_POST['siret'],FILTER_SANITIZE_NUMBER_INT);
-							$_POST['cp'] = filter_var($_POST['cp'],FILTER_SANITIZE_NUMBER_INT);
 							$_POST['tel'] = filter_var($_POST['tel'],FILTER_SANITIZE_NUMBER_INT);
 
-							$formIsOk = strlen($_POST['nom']) <= 255
-								&& strlen($_POST['prenom']) <= 255
-								&& strlen($_POST['entreprise']) <= 255
-								&& strlen($_POST['adresse']) <= 255
-								&& strlen($_POST['email']) <= 255
-								&& strlen($_POST['ville']) <= 255;
+							$formIsOk = strlen(htmlspecialchars($_POST['nom'])) <= 255
+								&& strlen(htmlspecialchars($_POST['prenom'])) <= 255
+								&& strlen(htmlspecialchars($_POST['entreprise'])) <= 255
+								&& strlen(htmlspecialchars($_POST['adresse'])) <= 255
+								&& strlen(htmlspecialchars($_POST['email'])) <= 255
+								&& strlen(htmlspecialchars($_POST['ville'])) <= 255;
 
 							if (!$formIsOk) {
                                     echo('
@@ -69,7 +67,7 @@ if(!isset($_SESSION['id']) || !$_SESSION['id']) {
 								if (strlen($_POST['siret']) != 14) {
                                     echo('
                                     <div class="alert alert-danger" role="alert">
-                                        Le numéro de SIRET doit contenir 14 chiffres !
+                                        Le numéro de SIRET doit contenir 14 caractères !
                                     </div>
                                     ');
 									$valid = false;
@@ -135,15 +133,15 @@ if(!isset($_SESSION['id']) || !$_SESSION['id']) {
 							}
 
 							if ($valid) {
-								$nom = $_POST['nom'];
-								$prenom = $_POST['prenom'];
-								$entreprise = $_POST['entreprise'];
-								$siret = $_POST['siret'];
-								$cp = $_POST['cp'];
-								$email = $_POST['email'];
-								$tel = $_POST['tel'];
-								$adresse = $_POST['adresse'];
-								$ville = $_POST['ville'];
+								$nom = htmlspecialchars($_POST['nom']);
+								$prenom = htmlspecialchars($_POST['prenom']);
+								$entreprise = htmlspecialchars($_POST['entreprise']);
+								$siret = htmlspecialchars($_POST['siret']);
+								$cp = htmlspecialchars($_POST['cp']);
+								$email = htmlspecialchars($_POST['email']);
+								$tel = htmlspecialchars($_POST['tel']);
+								$adresse = htmlspecialchars($_POST['adresse']);
+								$ville = htmlspecialchars($_POST['ville']);
 								$mdp = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
 
 								$requete = $bdd->prepare('INSERT INTO Utilisateur (email, password, prenom, nom, nomentreprise, siret, telephone, adresse, codepostal, ville, type, verifie) VALUES(:email, :password, :prenom, :nom, :nomentreprise, :siret, :telephone, :adresse, :codepostal, :ville, 0, 0); ');
