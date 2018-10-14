@@ -1,0 +1,16 @@
+nav .highight {
+    background: linear-gradient(33deg, rgba(0,172,255,0.7) 0%, rgba(124,0,255,0.7) 100%);
+    border-radius: 100px;
+    padding: 0 20px 0 20px;
+    color: white;
+    box-shadow: 0 0 11px rgba(0, 0, 0, .21);
+    transition: 0.5s; 
+    margin-left:5px;
+    margin-right:5px;
+}
+
+nav .highlight:hover {
+    background: linear-gradient(33deg, rgba(0,172,255,0.4) 0%, rgba(124,0,255,0.4) 100%);
+    box-shadow: 0 0 11px rgba(0,0,0, .42);
+    transition:0.5s;
+}

@@ -19,7 +19,28 @@
             <li class="nav-item">
                 <a id="contact" class="nav-link" href="contact.php">Contact</a>
             </li>
-
+            <?php
+            if (isset($_SESSION['id'])) {
+                echo '
+                    <li class="nav-item">
+                        <a id="contact" class="nav-link" href="contact.php">Contact</a>
+                    </li>                
+                ';
+            } else {
+                echo '
+                    <li class="nav-item">
+                        <a id="connexion" class="nav-link highlight" href="connexion.php">Se connecter</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="inscription" class="nav-link highlight" href="inscription.php">Créer un compte</a>
+                    </li>  
+                ';                
+            }
+            
+            ?>
+            
+            
+            
         </ul>
     </div>
 </nav>
