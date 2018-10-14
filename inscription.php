@@ -272,4 +272,4 @@ if(!isset($_SESSION['id']) || !$_SESSION['id']) {
 else {
     header('Location: index.php');
 }
-    ?>
+?>
