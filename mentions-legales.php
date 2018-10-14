@@ -9,7 +9,6 @@
     <title>MBDesk - Mentions légales</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel='stylesheet' href='css/style.css'>
-    <link rel="icon" href="favicon.ico">
 </head>
 
 <body>
