@@ -38,10 +38,9 @@ if(!isset($_SESSION['id']) && $_SESSION['id']) {
             $query = 'SELECT * FROM Utilisateur WHERE id = :id';
             $result = $bdd->prepare($query);
             $result->execute(array("id" => $_SESSION['id']));
-            $result = $result->fetchAll();
+
             
-            
-            foreach ($result as $row) {
+            if ($row = $result->fetch()) {
                 $prenom = $row['prenom'];
                 $nom = $row['nom'];
                 $email = $row['email'];
