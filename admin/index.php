@@ -21,7 +21,7 @@ require_once "../components/class/database.php";
         // On récupère les infos de l'admin pour vérifier le mot de passe.
         if($infos = $requete->fetch()) {
             // On vérifie que le mot de passe soit bon
-            if(password_verify($_POST['password'], $infos)) {
+            if(password_verify($_POST['password'], $infos['password'])) {
                 // Si c'est le cas, on met les infos dans la session pour connecter l'user.
                 $_SESSION['adminlogged'] = true;
                 $success = true;
