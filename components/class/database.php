@@ -31,7 +31,7 @@ class Database
      */
     private static $_bdd = null;
 
-    public static function bdd() : PDO
+    public static function bdd()
     {
         if(self::$_bdd == null)
         {
